@@ -20,3 +20,23 @@ let pokemonList = [
     types: ['Water', 'Poison'],
   },
 ];
+
+for (let i = 0; i <= pokemonList.length; i++) {
+  if (pokemonList[i].height === 1.6) {
+    document.write(
+      '<p>' +
+        pokemonList[i].name +
+        ' (height: ' +
+        pokemonList[i].height +
+        ") - Wow, that's <strong>big</strong>!!!</p>"
+    );
+  } else {
+    document.write(
+      '<p>' +
+        pokemonList[i].name +
+        ' (height: ' +
+        pokemonList[i].height +
+        ')</p>'
+    );
+  }
+}

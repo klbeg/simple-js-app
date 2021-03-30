@@ -1,0 +1,20 @@
+/* global */
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* main elements */
+body {
+  background-color: rgb(60, 60, 143);
+  color: white;
+}
+p {
+  font-size: 18px;
+}
+
+/* index.html stylings */
+.pokeList__header_containter {
+  display: flex;
+}
+.pokeList__header_containter img {
+  padding-left: 8px;
+}
