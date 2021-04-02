@@ -2,8 +2,11 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
 
+  //  'add' function, limited to objects only
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (typeof pokemon === 'object') {
+      pokemonList.push(pokemon);
+    }
   }
 
   function getAll() {
