@@ -22,27 +22,15 @@ let pokemonList = [
   },
 ];
 
-// for loop to iterate over list
-for (let i = 0; i <= pokemonList.length; i++) {
-  // filters out tallest pokemon
-  // and adds tag 'wow that's big'
-  if (pokemonList[i].height === 1.6) {
+// forEach to iterate over pokemonList
+pokemonList.forEach(function (pokemon) {
+  //  to highlight tallest pokemon in list
+  if (pokemon.height === 1.6) {
     document.write(
-      '<p>' +
-        pokemonList[i].name +
-        ' (height: ' +
-        pokemonList[i].height +
-        ") - Wow, that's <strong>big</strong>!!!</p>"
+      pokemon.name + ' (height: ' + pokemon.height + " -  Wow, that's big!<br>"
     );
-
-    // outputs all other pokemon to list without tag
+    //  to display all other pokemon names and heights
   } else {
-    document.write(
-      '<p>' +
-        pokemonList[i].name +
-        ' (height: ' +
-        pokemonList[i].height +
-        ')</p>'
-    );
+    document.write(pokemon.name + ' (height: ' + pokemon.height + ')<br>');
   }
-}
+});
