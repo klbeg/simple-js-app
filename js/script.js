@@ -2,13 +2,17 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
 
-  //  'add' function, limited to objects only
+  //  'add' function that confirms that entered object
+  //  has keys(name, height, and types)
+  //  pushes to pokemonRepository.getAll
   function add(pokemon) {
-    if (typeof pokemon === 'object') {
+    if (!pokemon.hasOwnProperty('name' && 'height' && 'types')) {
+      throw TypeError('Invalid object.');
+    } else if (pokemon) {
       pokemonList.push(pokemon);
     }
   }
-
+  // lists out all pokemon in pokemonRepository
   function getAll() {
     return pokemonList;
   }
@@ -19,7 +23,7 @@ let pokemonRepository = (function () {
   };
 })();
 
-// adding pokemon to pokemonRepository
+// pokemon added to pokemonRepository via pokemonRepository.add
 pokemonRepository.add({
   name: 'Ivysaur',
   height: 1,
