@@ -4,7 +4,11 @@ let pokemonRepository = (function () {
 
   // pushes 'pokemon' to 'pokemonRepository.getAll()'
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (isValidPokemon(pokemon) === 'true') {
+      pokemonList.push(pokemon);
+    } else {
+      throw TypeError('Invalid object!')
+    } 
   }
   // lists out all pokemon in pokemonRepository
   function getAll() {
@@ -29,15 +33,6 @@ function isValidPokemon(pokemon) {
       // array [name, height, types]
       return pokemon.hasOwnProperty(key);
     })
-  ) {
-    // pushes to pokemonRepository.getAll
-    // via pokemonRepository.add
-    pokemonRepository.add(pokemon);
-    // if 'isValidPokemon' returns false,
-    // 'invalie object' will be displayed
-  } else {
-    throw TypeError('Invalid object.');
-  }
 }
 
 // 'isPokemonValid' will first validate entries and
