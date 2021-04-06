@@ -2,28 +2,47 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
 
-  //  'add' function that confirms that entered object
-  //  has keys(name, height, and types)
-  //  pushes to pokemonRepository.getAll
+  // pushes 'pokemon' to 'pokemonRepository.getAll()'
   function add(pokemon) {
-    if (!pokemon.hasOwnProperty('name' && 'height' && 'types')) {
-      throw TypeError('Invalid object.');
-    } else if (pokemon) {
-      pokemonList.push(pokemon);
-    }
+    pokemonList.push(pokemon);
   }
   // lists out all pokemon in pokemonRepository
   function getAll() {
     return pokemonList;
   }
-
+  // my assumption is that this resets the values of 'add' and 'getAll'
+  // if I'm wrong, please let me know.
   return {
     add: add,
     getAll: getAll,
   };
 })();
 
-// pokemon added to pokemonRepository via pokemonRepository.add
+// creates a function to validate wether 'pokemon' has
+// specified keys
+function isValidPokemon(pokemon) {
+  //  creates array [name, height, type]
+  //  to be checked against in functin(key)
+  if (
+    ['name', 'height', 'types'].every(function (key) {
+      // checks properties(keys) of 'pokemon' against
+      // array [name, height, types]
+      return pokemon.hasOwnProperty(key);
+    })
+  ) {
+    // pushes to pokemonRepository.getAll
+    // via pokemonRepository.add
+    pokemonRepository.add(pokemon);
+    // if 'isValidPokemon' returns false,
+    // 'invalie object' will be displayed
+  } else {
+    throw TypeError('Invalid object.');
+  }
+}
+
+// 'isPokemonValid' will first validate entries and
+// if truthy, will execute pokemonRepository.add
+// adding the object to the repository
 pokemonRepository.add({
   name: 'Ivysaur',
   height: 1,
