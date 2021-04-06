@@ -1,23 +1,3 @@
-//  Creating pokemonRepository with 'add' and 'getAll' functionality
-let pokemonRepository = (function () {
-  let pokemonList = [];
-
-  // pushes 'pokemon' to 'pokemonRepository.getAll()'
-  function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
-  // lists out all pokemon in pokemonRepository
-  function getAll() {
-    return pokemonList;
-  }
-  // my assumption is that this resets the values of 'add' and 'getAll'
-  // if I'm wrong, please let me know.
-  return {
-    add: add,
-    getAll: getAll,
-  };
-})();
-
 // creates a function to validate wether 'pokemon' has
 // specified keys
 function isValidPokemon(pokemon) {
@@ -39,6 +19,26 @@ function isValidPokemon(pokemon) {
     throw TypeError('Invalid object.');
   }
 }
+
+//  Creating pokemonRepository with 'add' and 'getAll' functionality
+let pokemonRepository = (function () {
+  let pokemonList = [];
+
+  // pushes 'pokemon' to 'pokemonRepository.getAll()'
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+  // lists out all pokemon in pokemonRepository
+  function getAll() {
+    return pokemonList;
+  }
+  // my assumption is that this resets the values of 'add' and 'getAll'
+  // if I'm wrong, please let me know.
+  return {
+    add: add,
+    getAll: getAll,
+  };
+})();
 
 // 'isPokemonValid' will first validate entries and
 // if truthy, will execute pokemonRepository.add
