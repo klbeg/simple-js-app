@@ -1,35 +1,32 @@
-// creates a function to validate wether 'pokemon' has
-// specified keys
+// checks for key values in pokemon and returns boolean
 function isValidPokemon(pokemon) {
-  //  creates array [name, height, type]
-  //  to be checked against in functin(key)
-  if (
-    ['name', 'height', 'types'].every(function (key) {
-      // checks properties(keys) of 'pokemon' against
-      // array [name, height, types]
-      return pokemon.hasOwnProperty(key);
-    })
-  ) {
-    // pushes to pokemonRepository.getAll
-    // via pokemonRepository.add
-    pokemonRepository.add(pokemon);
-    // if 'isValidPokemon' returns false,
-    // 'invalie object' will be displayed
-  } else {
-    throw TypeError('Invalid object.');
-  }
+  // key values expected
+  return ['name', 'height', 'types'].every(function (key) {
+    return pokemon.hasOwnProperty(key);
+  });
 }
 
-//  Creating pokemonRepository with 'add' and 'getAll' functionality
+//  pokemonRepository used to create list of pokemon
+//  .add function for pushing to list
+//  .getAll function to output list of pokemon
 let pokemonRepository = (function () {
   let pokemonList = [];
-
-  // pushes 'pokemon' to 'pokemonRepository.getAll()'
+  // pushes 'pokemon' to 'pokemonList'.
+  // accessable via pokemonRepository.getAll
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    //  calls 'isValidPokemon' function to validate
+    //  pending 'pokemon'
+    if (isValidPokemon(pokemon)) {
+      //  if 'pokemon' is valid, pushes to pokemonList
+      pokemonList.push(pokemon);
+    } else {
+      // if 'pokemon' invaled, throws error message
+      throw TypeError('Invalid object!');
+    }
   }
   // lists out all pokemon in pokemonRepository
   function getAll() {
+    // outputs pokemonList
     return pokemonList;
   }
   // my assumption is that this resets the values of 'add' and 'getAll'
@@ -40,9 +37,8 @@ let pokemonRepository = (function () {
   };
 })();
 
-// 'isPokemonValid' will first validate entries and
-// if truthy, will execute pokemonRepository.add
-// adding the object to the repository
+//  pokemon added via pokemonRepository.add
+//  after auto validating via isValidPokemon
 pokemonRepository.add({
   name: 'Ivysaur',
   height: 1,
@@ -87,3 +83,4 @@ function outputListOfPokemon() {
 }
 //  calling output function
 outputListOfPokemon();
+console.log(pokemonRepository.getAll());
