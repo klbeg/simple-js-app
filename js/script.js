@@ -24,13 +24,11 @@ let pokemonRepository = (function () {
       throw TypeError('Invalid object!');
     }
   }
-  // lists out all pokemon in pokemonRepository
+  // outputs full list of pokemon
   function getAll() {
-    // outputs pokemonList
     return pokemonList;
   }
-  // my assumption is that this resets the values of 'add' and 'getAll'
-  // if I'm wrong, please let me know.
+  // resets values for 'add' and 'getAll'
   return {
     add: add,
     getAll: getAll,
