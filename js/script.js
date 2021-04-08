@@ -66,14 +66,19 @@ function outputListOfPokemon() {
   //  iterates over pokemonList and creates: li > button{pokemon's name}
   //  for each pokemon in list
   pokemonList.forEach(function (pokemon) {
-    let pokemonListContainer = document.querySelector('ul');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');
-    pokemonListContainer.appendChild(listItem);
-    listItem.appendChild(button);
-    button.innerText = pokemon.name;
+    pokemonButtonCreator(pokemon);
   });
 }
+
+let pokemonButtonCreator = (pokemon) => {
+  let pokemonListContainer = document.querySelector('ul');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  pokemonListContainer.appendChild(listItem);
+  listItem.appendChild(button);
+  button.innerText = pokemon.name;
+};
+
 //  calling output function
 outputListOfPokemon();
 console.log(pokemonRepository.getAll());
