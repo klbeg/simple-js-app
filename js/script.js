@@ -46,12 +46,15 @@ function isValidPokemon(pokemon) {
 //  appends 'li' > 'button{pokemon name}' to pokemon 'ul' in index.html
 //  adds event listener to log the pokemon object in the console
 let pokemonButtonCreator = (pokemon) => {
+  //  targets 'ul' creates 'li' and 'button'
   let pokemonListContainer = document.querySelector('ul');
   let listItem = document.createElement('li');
   let button = document.createElement('button');
+  //  appends 'li' and 'button' to 'ul'
   pokemonListContainer.appendChild(listItem);
   listItem.appendChild(button);
   button.innerText = pokemon.name;
+  //  event listener for button click
   button.addEventListener('click', function () {
     console.log(pokemon);
   });
