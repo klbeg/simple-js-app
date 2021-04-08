@@ -7,6 +7,9 @@ body {
   background-color: rgb(60, 60, 143);
   color: white;
 }
+ul {
+  list-style: none;
+}
 p {
   font-size: 18px;
 }

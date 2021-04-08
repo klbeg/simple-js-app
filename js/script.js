@@ -70,6 +70,7 @@ function outputListOfPokemon() {
   });
 }
 
+// appends 'li' > 'button{pokemon name}' to pokemon 'ul' in index.html
 let pokemonButtonCreator = (pokemon) => {
   let pokemonListContainer = document.querySelector('ul');
   let listItem = document.createElement('li');
