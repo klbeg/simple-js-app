@@ -63,20 +63,15 @@ function outputListOfPokemon() {
   // create pokemonList to be used in forEach loop
   let pokemonList = pokemonRepository.getAll();
 
-  // forEach loop to iterate over pokemonList
+  //  iterates over pokemonList and creates: li > button{pokemon's name}
+  //  for each pokemon in list
   pokemonList.forEach(function (pokemon) {
-    //  to highlight tallest pokemon in list
-    if (pokemon.height === 1.6) {
-      document.write(
-        pokemon.name +
-          ' (height: ' +
-          pokemon.height +
-          " -  Wow, that's big!<br>"
-      );
-    } else {
-      //  to display all other pokemon names and heights
-      document.write(pokemon.name + ' (height: ' + pokemon.height + ')<br>');
-    }
+    let pokemonListContainer = document.querySelector('ul');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    pokemonListContainer.appendChild(listItem);
+    listItem.appendChild(button);
+    button.innerText = pokemon.name;
   });
 }
 //  calling output function
