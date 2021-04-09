@@ -61,13 +61,20 @@ let pokemonRepository = (function () {
       });
   }
 
-  // resets values for 'add' and 'getAll'
+  function showDetails(pokemon) {
+    loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
+  }
+
+  // returns all values
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
+    showDetails: showDetails,
   };
 })();
 
@@ -139,8 +146,3 @@ pokemonRepository.add({
 */
 //  calling output function
 outputListOfPokemon();
-function showDetails(pokemon) {
-  loadDetails(pokemon).then(function () {
-    console.log(pokemon);
-  });
-}
