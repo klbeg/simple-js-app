@@ -1,26 +1,34 @@
 //  pokemonRepository used to create list of pokemon
 let pokemonRepository = (function () {
   let pokemonList = [];
+
   //  .add function for pushing to list
   function add(pokemon) {
+    pokemonList.push(pokemon);
     //  calls 'isValidPokemon' function to validate
     //  pending 'pokemon'
-    if (isValidPokemon(pokemon)) {
-      //  if 'pokemon' is valid, pushes to pokemonList
-      pokemonList.push(pokemon);
-    } else {
-      // if 'pokemon' invalid, throws error message
-      throw TypeError('Invalid object!');
-    }
+    //  if 'pokemon' is valid, pushes to pokemonList
+    // if 'pokemon' invalid, throws error message
+    //if (isValidPokemon(pokemon)) {
+    //} else {
+    // throw TypeError('Invalid object!');
+    //}
   }
+
   //  .getAll function to access full list of pokemon
   function getAll() {
     return pokemonList;
   }
+
+  function addListItem(pokemon) {
+    pokemonButtonCreator(pokemon);
+  }
+
   // resets values for 'add' and 'getAll'
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem,
   };
 })();
 
@@ -59,7 +67,7 @@ let pokemonButtonCreator = (pokemon) => {
     console.log(pokemon);
   });
 };
-
+/*
 //  pokemon added via pokemonRepository.add
 //  after auto validating via isValidPokemon
 pokemonRepository.add({
@@ -82,6 +90,11 @@ pokemonRepository.add({
   height: 1.6,
   types: ['Water', 'Poison'],
 });
-
+*/
 //  calling output function
 outputListOfPokemon();
+function showDetails(pokemon) {
+  loadDetails(pokemon).then(function () {
+    console.log(pokemon);
+  });
+}
