@@ -1,3 +1,5 @@
 # Ignore Mac system files
 .DS_store
 .svg
+fetch-polyfill.js
+promise-polyfill.js
