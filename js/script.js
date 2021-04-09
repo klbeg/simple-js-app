@@ -66,8 +66,17 @@ let pokemonRepository = (function () {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails,
   };
 })();
+
+pokemonRepository.loadList().then(function () {
+  // Now the data is loaded!
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
+});
 
 //  outputs list of pokemon in form of '1button{name}'
 function outputListOfPokemon() {
