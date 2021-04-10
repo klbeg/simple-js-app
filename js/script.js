@@ -85,16 +85,6 @@ pokemonRepository.loadList().then(function () {
   });
 });
 
-//  outputs list of pokemon in form of '1button{name}'
-function outputListOfPokemon() {
-  let pokemonList = pokemonRepository.getAll();
-  //  iterates over pokemonList and creates: li > button{pokemon's name}
-  //  for each pokemon in list
-  pokemonList.forEach(function (pokemon) {
-    pokemonButtonCreator(pokemon);
-  });
-}
-
 //  checks for key values in pokemon and returns boolean
 //  called in pokemonRepository.add function
 function isValidPokemon(pokemon) {
@@ -120,6 +110,9 @@ let pokemonButtonCreator = (pokemon) => {
     console.log(pokemon);
   });
 };
+
+//  the following is unused code to be deleted
+//  after 1.7 is complete and functioning properly
 /*
 //  pokemon added via pokemonRepository.add
 //  after auto validating via isValidPokemon
@@ -145,4 +138,14 @@ pokemonRepository.add({
 });
 */
 //  calling output function
-outputListOfPokemon();
+
+//  outputs list of pokemon in form of '1button{name}'
+//  function outputListOfPokemon() {
+//  let pokemonList = pokemonRepository.getAll();
+//  iterates over pokemonList and creates: li > button{pokemon's name}
+//  for each pokemon in list
+//  pokemonList.forEach(function (pokemon) {
+//  pokemonButtonCreator(pokemon);
+// });
+//  }
+//outputListOfPokemon();
