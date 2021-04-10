@@ -61,9 +61,9 @@ let pokemonRepository = (function () {
       });
   }
 
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+  function showDetails(item) {
+    loadDetails(item).then(function () {
+      console.log(item);
     });
   }
 
@@ -107,7 +107,7 @@ let pokemonButtonCreator = (pokemon) => {
   button.innerText = pokemon.name;
   //  event listener for button click
   button.addEventListener('click', function () {
-    console.log(pokemon);
+    pokemonRepository.showDetails(pokemon);
   });
 };
 
