@@ -111,14 +111,17 @@ let submit = document.querySelector('#submit__button');
 //  email validation looking for '@' symbol and a '.'
 let validateEmail = () => {
   let value = email.value;
+  //  throws error if email field is left blank
   if (!value) {
     showErrorMessage(email, 'You must enter a valid email address');
     return false;
   }
+  //  throws error if email doesn't contain '@' symbol
   if (value.indexOf('@') === -1) {
     showErrorMessage(email, 'You must enter a valid email address');
     return false;
   }
+  //  if there's no errors, email is valid
   showErrorMessage(email, null);
   return true;
 };
