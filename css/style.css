@@ -28,3 +28,7 @@ p {
   border-radius: 5px;
   border-color: red;
 }
+.input__wrapper {
+  display: grid;
+  grid-template-columns: 20% 50%;
+}
