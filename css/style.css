@@ -1,6 +1,8 @@
 /* global */
 * {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+  color: #fff;
 }
 body {
   /* background-color: rgb(60, 60, 143); */
@@ -20,6 +22,7 @@ p {
 
 /* header styling */
 .pokeList__header_containter {
+  width: 100%;
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -30,12 +33,16 @@ p {
 /* pokemon list styling */
 .pokemon__list__container {
   list-style: none;
+  width: 300px;
+  margin: 0, auto;
+}
+.pokemon__list__container li {
 }
 .pokemon__list__container li button {
-  width: 80px;
-  background-color: rgba(176, 240, 240, 0.74);
-  border-radius: 5px;
-  border-color: red;
+  width: 300px;
+  font-size: 50px;
+  background-color: rgba(0, 2, 2, 0.349);
+  border: 3px solid #d68310;
 }
 /* email/password form styling */
 .input__wrapper,
