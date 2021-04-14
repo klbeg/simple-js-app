@@ -7,25 +7,24 @@ body {
   background-color: rgb(60, 60, 143);
   color: white;
 }
-.pokemon__list__container {
-  list-style: none;
-}
-.pokemon__list__container {
-}
-.pokemon__list__container li button {
-  width: 80px;
-  background-color: rgba(176, 240, 240, 0.74);
-  border-radius: 5px;
-  border-color: red;
-}
 p {
   font-size: 18px;
 }
 
 /* index.html stylings */
 .pokeList__header_containter {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .pokeList__header_containter img {
   padding-left: 8px;
+}
+.pokemon__list__container {
+  list-style: none;
+}
+.pokemon__list__container li button {
+  width: 80px;
+  background-color: rgba(176, 240, 240, 0.74);
+  border-radius: 5px;
+  border-color: red;
 }
