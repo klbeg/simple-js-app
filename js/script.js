@@ -6,14 +6,6 @@ let pokemonRepository = (function () {
   //  .add function for pushing to list
   function add(pokemon) {
     pokemonList.push(pokemon);
-    //  calls 'isValidPokemon' function to validate
-    //  pending 'pokemon'
-    //  if 'pokemon' is valid, pushes to pokemonList
-    // if 'pokemon' invalid, throws error message
-    //if (isValidPokemon(pokemon)) {
-    //} else {
-    // throw TypeError('Invalid object!');
-    //}
   }
 
   //  .getAll function to access full list of pokemon
@@ -110,42 +102,3 @@ let pokemonButtonCreator = (pokemon) => {
     pokemonRepository.showDetails(pokemon);
   });
 };
-
-//  the following is unused code to be deleted
-//  after 1.7 is complete and functioning properly
-/*
-//  pokemon added via pokemonRepository.add
-//  after auto validating via isValidPokemon
-pokemonRepository.add({
-  name: 'Ivysaur',
-  height: 1,
-  types: ['Grass', 'Poison'],
-});
-pokemonRepository.add({
-  name: 'Charmeleon',
-  height: 1.1,
-  types: ['Fire'],
-});
-pokemonRepository.add({
-  name: 'Ninetales',
-  height: 1.1,
-  types: ['Fire'],
-});
-pokemonRepository.add({
-  name: 'Tentacruel',
-  height: 1.6,
-  types: ['Water', 'Poison'],
-});
-*/
-//  calling output function
-
-//  outputs list of pokemon in form of '1button{name}'
-//  function outputListOfPokemon() {
-//  let pokemonList = pokemonRepository.getAll();
-//  iterates over pokemonList and creates: li > button{pokemon's name}
-//  for each pokemon in list
-//  pokemonList.forEach(function (pokemon) {
-//  pokemonButtonCreator(pokemon);
-// });
-//  }
-//outputListOfPokemon();
