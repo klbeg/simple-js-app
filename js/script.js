@@ -121,3 +121,20 @@ let validatePass = () => {
   let value = password.value;
   return value && value.length >= 8;
 };
+
+//  default error messsage for email/pass validation
+let showErrorMessage = (input, message) => {
+  let container = input.parentElement;
+  let error = container.querySelector('.error__message');
+  //  if an error currently exists, remove it
+  if (error) {
+    container.removeChild(error);
+  }
+  //  adds div containing error message
+  if (message) {
+    let error = document.createElement('div');
+    error.classList.add('error__message');
+    error.innerText = message;
+    container.appendChild(error);
+  }
+};
