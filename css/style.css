@@ -36,3 +36,10 @@ p {
   display: grid;
   grid-template-columns: 20% 50%;
 }
+.submit__wrapper {
+  display: grid;
+  grid-template-columns: auto auto 30%;
+}
+.submit__wrapper button {
+  grid-column-start: 2;
+}
