@@ -32,14 +32,14 @@ p {
   border-color: red;
 }
 /* email/password form styling */
-.input__wrapper {
-  display: grid;
-  grid-template-columns: 20% 50%;
-}
+.input__wrapper,
 .submit__wrapper {
   display: grid;
-  grid-template-columns: auto auto 30%;
+  grid-template-columns: 17% 45% auto;
 }
 .submit__wrapper button {
   grid-column-start: 2;
+}
+.error__message {
+  grid-column-start: 3;
 }
