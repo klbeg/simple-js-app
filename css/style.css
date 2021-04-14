@@ -21,12 +21,12 @@ p {
 /* index.html stylings */
 
 /* header styling */
-.pokeList__header_containter {
+.pokemon__header_containter {
   width: 100%;
   display: grid;
   grid-template-columns: auto auto;
 }
-.pokeList__header_containter img {
+.pokemon__header_containter img {
   padding-left: 8px;
 }
 
