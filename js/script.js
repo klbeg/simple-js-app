@@ -104,9 +104,9 @@ let pokemonButtonCreator = (pokemon) => {
 };
 
 // registration input/button code below
+let form = document.querySelector('#register__form');
 let email = document.querySelector('#email__input');
 let password = document.querySelector('#pass__input');
-let submit = document.querySelector('#submit__button');
 
 //  email validation looking for '@' symbol and a '.'
 let validateEmail = () => {
@@ -127,7 +127,7 @@ let validateEmail = () => {
 };
 
 //  password validation, looking for 8+ characters
-let validatePass = () => {
+let validatePassword = () => {
   let value = password.value;
   //  throws error if password field is left blank
   if (!value) {
