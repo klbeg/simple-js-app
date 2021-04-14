@@ -3,7 +3,13 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
-  background-color: rgb(60, 60, 143);
+  /* background-color: rgb(60, 60, 143); */
+  background-color: black;
+  background-image: url(../img/pickachu-background.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
   color: white;
 }
 p {
@@ -34,7 +40,8 @@ p {
 /* email/password form styling */
 .input__wrapper,
 .submit__wrapper {
-  display: grid;
+  display: none; /* toggled off while figuring out page layout */
+  /* display: grid; */
   grid-template-columns: 17% 45% auto;
 }
 .submit__wrapper button {
