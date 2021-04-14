@@ -130,7 +130,7 @@ let showErrorMessage = (input, message) => {
   if (error) {
     container.removeChild(error);
   }
-  //  adds div containing error message
+  //  if a message exists, adds div containing error message
   if (message) {
     let error = document.createElement('div');
     error.classList.add('error__message');
