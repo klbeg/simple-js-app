@@ -111,9 +111,16 @@ let submit = document.querySelector('#submit__button');
 //  email validation looking for '@' symbol and a '.'
 let validateEmail = () => {
   let value = email.value;
-  let hasAtSign = value.indexOf('@') > -1;
-  let hasDot = value.indexOf('.') > -1;
-  return value && hasAtSign && hasDot;
+  if (!value) {
+    showErrorMessage(email, 'You must enter a valid email address');
+    return false;
+  }
+  if (value.indexOf('@') === -1) {
+    showErrorMessage(email, 'You must enter a valid email address');
+    return false;
+  }
+  showErrorMessage(email, null);
+  return true;
 };
 
 //  password validation, looking for 8+ characters
