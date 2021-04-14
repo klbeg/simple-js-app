@@ -107,3 +107,10 @@ let pokemonButtonCreator = (pokemon) => {
 let email = document.querySelector('#email__input');
 let password = document.querySelector('#pass__input');
 let submit = document.querySelector('#submit__button');
+
+let validateEmail = () => {
+  let value = email.value;
+  let hasAtSign = value.indexOf('@') > -1;
+  let hasDot = value.indexOf('.') > -1;
+  return value && hasAtSign && hasDot;
+};
