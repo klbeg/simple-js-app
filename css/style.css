@@ -1,5 +1,8 @@
 /* variables */
-
+* {
+  --orange: #d68310;
+  --shadowOrange: #d68310ad;
+}
 /* global */
 * {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -12,7 +15,6 @@ h1 {
   font-size: 75px;
 }
 body {
-  /* background-color: rgb(60, 60, 143); */
   background-color: black;
   background-image: url(../img/pickachu-background.jpg);
   background-size: 100%;
@@ -29,7 +31,7 @@ p {
 
 /* header styling */
 .pokemon__header_containter {
-  background-color: rgba(0, 0, 0, 0.37);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100px;
   display: grid;
@@ -57,9 +59,9 @@ p {
 .pokemon__list__container li button {
   width: 300px;
   font-size: 50px;
-  background-color: rgba(0, 2, 2, 0.349);
-  border: 5px solid;
-  text-shadow: 3px;
+  background-color: rgba(0, 0, 0, 0.349);
+  border: 5px solid var(--orange);
+  text-shadow: 3px 3px var(--shadowOrange);
 }
 /* email/password form styling */
 .input__wrapper,
