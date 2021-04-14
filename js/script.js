@@ -163,3 +163,18 @@ let showErrorMessage = (input, message) => {
     container.appendChild(error);
   }
 };
+
+//  form validation
+let validateForm = () => {
+  let isValidEmail = validateEmail();
+  let isValidPassword = validatePassword();
+  return isValidEmail && isValidPassword;
+};
+
+//  submit button event listener
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    alert('Success!!');
+  }
+});
