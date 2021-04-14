@@ -131,7 +131,7 @@ let validatePassword = () => {
   let value = password.value;
   //  throws error if password field is left blank
   if (!value) {
-    showErrorMessage(passord, 'Password is a required field.');
+    showErrorMessage(password, 'Password is a required field.');
     return false;
   }
   //  throws error if password is less than 8 characters
