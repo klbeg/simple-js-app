@@ -102,3 +102,8 @@ let pokemonButtonCreator = (pokemon) => {
     pokemonRepository.showDetails(pokemon);
   });
 };
+
+// registration input/button code below
+let email = document.querySelector('#email__input');
+let password = document.querySelector('#pass__input');
+let submit = document.querySelector('#submit__button');
