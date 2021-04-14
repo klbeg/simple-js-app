@@ -2,7 +2,6 @@
 * {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-/* main elements */
 body {
   background-color: rgb(60, 60, 143);
   color: white;
@@ -12,6 +11,8 @@ p {
 }
 
 /* index.html stylings */
+
+/* header styling */
 .pokeList__header_containter {
   display: grid;
   grid-template-columns: auto auto;
@@ -19,6 +20,8 @@ p {
 .pokeList__header_containter img {
   padding-left: 8px;
 }
+
+/* pokemon list styling */
 .pokemon__list__container {
   list-style: none;
 }
@@ -28,6 +31,7 @@ p {
   border-radius: 5px;
   border-color: red;
 }
+/* email/password form styling */
 .input__wrapper {
   display: grid;
   grid-template-columns: 20% 50%;
