@@ -129,7 +129,22 @@ let validateEmail = () => {
 //  password validation, looking for 8+ characters
 let validatePass = () => {
   let value = password.value;
-  return value && value.length >= 8;
+  //  throws error if password field is left blank
+  if (!value) {
+    showErrorMessage(passord, 'Password is a required field.');
+    return false;
+  }
+  //  throws error if password is less than 8 characters
+  if (value.length < 8) {
+    showErrorMessage(
+      password,
+      'Your pasword needs to be at least 8 characters long.'
+    );
+    return false;
+  }
+  //  if there's no errors, password is valid
+  showErrorMessage(password, null);
+  return true;
 };
 
 //  default error messsage for email/pass validation
