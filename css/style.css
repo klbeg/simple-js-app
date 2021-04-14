@@ -32,17 +32,21 @@ p {
 
 /* pokemon list styling */
 .pokemon__list__container {
+  display: grid;
+  grid-template-columns: auto 300px auto;
   list-style: none;
-  width: 300px;
+  width: 100%;
   margin: 0, auto;
 }
 .pokemon__list__container li {
+  grid-column-start: 2;
+  padding: 5px 0;
 }
 .pokemon__list__container li button {
   width: 300px;
   font-size: 50px;
   background-color: rgba(0, 2, 2, 0.349);
-  border: 3px solid #d68310;
+  border: 5px solid #d68310;
 }
 /* email/password form styling */
 .input__wrapper,
