@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Oswald&display=swap"
       rel="stylesheet"
     />
     <title>Simple JS App</title>
@@ -16,18 +17,9 @@
     <!-- starts header  -->
     <div class="pokemon__header_containter">
       <h1>PokeDex</h1>
-      <form id="register__form">
-        <div class="input__wrapper">
-          <label for="email">Email:</label>
-          <input type="email" name="email__input" id="email__input" />
-        </div>
-        <div class="input__wrapper">
-          <label for="password">Password:</label>
-          <input type="password" name="pass__input" id="pass__input" />
-        </div>
-        <div class="submit__wrapper">
-          <button type="submit" id="submit__button">Submit</button>
-        </div>
+      <form action="search" id="search__bar">
+        <label id="search__label" for="search__input">Search</label>
+        <input type="search" name="search__input" id="search__input" />
       </form>
     </div>
     <!-- end of header section -->
@@ -36,3 +28,17 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+
+<!-- <form id="register__form">
+    <div class="input__wrapper">
+      <label for="email">Email:</label>
+      <input type="email" name="email__input" id="email__input" />
+    </div>
+    <div class="input__wrapper">
+      <label for="password">Password:</label>
+      <input type="password" name="pass__input" id="pass__input" />
+    </div>
+    <div class="submit__wrapper">
+      <button type="submit" id="submit__button">Submit</button>
+    </div>
+  </form> -->
