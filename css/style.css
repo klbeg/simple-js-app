@@ -63,14 +63,8 @@ p {
   width: 90px;
   padding: 0 13px;
   background-color: var(--white);
-  justify-self: end;
-  justify-content: center;
-  align-content: center;
 }
 #search__label {
-  display: block;
-  justify-self: end;
-  height: 40px;
   font-size: 25px;
   color: var(--black);
 }
@@ -97,7 +91,7 @@ p {
 .pokemon__list__container li button {
   width: 300px;
   padding-bottom: 4px;
-  font-size: 45px;
+  font-size: 35px;
   background-color: var(--transBlack);
   border: 5px solid var(--orange);
   text-shadow: var(--textShadow);
