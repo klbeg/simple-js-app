@@ -55,9 +55,10 @@ p {
 /* search bar only in header for mobile view */
 #search__bar {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto 90px 175px auto;
 }
 .search__label__container {
+  grid-column-start: 2;
   height: 40px;
   width: 90px;
   padding: 0 13px;
@@ -69,12 +70,14 @@ p {
 #search__label {
   display: block;
   justify-self: end;
-  height: 25px;
+  height: 40px;
   font-size: 25px;
   color: var(--black);
 }
 #search__input {
+  grid-column-start: 3;
   background-color: var(--black);
+  width: 175px;
   align-self: center;
   height: 40px;
   border: 3px solid var(--white);
