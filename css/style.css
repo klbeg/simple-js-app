@@ -5,6 +5,7 @@
   --black: #000;
   --transBlack: rgba(0, 0, 0, 0.6);
   --white: #fff;
+  --textShadow: 3px 3px var(--shadowOrange);
   --primaryFont: 'Orelega One', cursive;
   --secondaryFont: 'Oswald', sans-serif;
 }
@@ -45,11 +46,9 @@ p {
   margin-bottom: 20px;
   padding-bottom: 20px;
   grid-template-rows: 100px 30px;
-  align-content: center;
   /* grid-template-columns: auto 50% auto; */
 }
 .pokemon__header_containter h1 {
-  /* grid-column-start: 2; */
   justify-self: center;
   align-self: start;
 }
@@ -98,7 +97,7 @@ p {
   font-size: 45px;
   background-color: var(--transBlack);
   border: 5px solid var(--orange);
-  text-shadow: 3px 3px var(--shadowOrange);
+  text-shadow: var(--textShadow);
 }
 /* email/password form styling */
 .input__wrapper,
