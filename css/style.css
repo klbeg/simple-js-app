@@ -5,16 +5,19 @@
   --black: #000;
   --transBlack: rgba(0, 0, 0, 0.6);
   --white: #fff;
+  --orlegaFont: 'Orelega One', cursive;
+  --robotoFont: 'Roboto', sans-serif;
 }
 /* global */
 * {
-  font-family: 'Orelega One', cursive;
+  font-family: var(--robotoFont);
   box-sizing: border-box;
-  color: #fff;
+  color: var(--white);
   margin: 0;
   padding: 0;
 }
 h1 {
+  font-family: var(--orlegaFont);
   font-size: 75px;
   font-weight: 300;
 }
@@ -28,7 +31,6 @@ body {
   color: var(--white);
 }
 p {
-  font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
 
@@ -64,8 +66,7 @@ p {
 .pokemon__list__container li button {
   width: 300px;
   padding-bottom: 4px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   background-color: var(--transBlack);
   border: 5px solid var(--orange);
   text-shadow: 3px 3px var(--shadowOrange);
