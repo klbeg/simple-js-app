@@ -40,31 +40,45 @@ p {
 .pokemon__header_containter {
   background-color: var(--black);
   width: 100%;
-  /* height: 100px; */
+  height: 160px;
   display: grid;
   margin-bottom: 20px;
-  grid-template-rows: 100px 40px;
+  padding-bottom: 20px;
+  grid-template-rows: 100px 30px;
   align-content: center;
   /* grid-template-columns: auto 50% auto; */
 }
 .pokemon__header_containter h1 {
   /* grid-column-start: 2; */
   justify-self: center;
-  align-self: center;
+  align-self: start;
 }
 /* search bar only in header for mobile view */
 #search__bar {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-#search__label {
-  font-size: 25px;
+.search__label__container {
+  height: 40px;
+  width: 90px;
+  padding: 0 13px;
+  background-color: var(--white);
   justify-self: end;
+  justify-content: center;
+  align-content: center;
+}
+#search__label {
+  display: block;
+  justify-self: end;
+  height: 25px;
+  font-size: 25px;
+  color: var(--black);
 }
 #search__input {
   background-color: var(--black);
   align-self: center;
-  height: 30px;
+  height: 40px;
+  border: 3px solid var(--white);
 }
 /* pokemon list styling */
 .pokemon__list__container {
