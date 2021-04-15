@@ -76,6 +76,38 @@ p {
   height: 40px;
   border: 3px solid var(--white);
 }
+/* modal styling */
+#modal__container {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--transBlack);
+  z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+}
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: var(--white);
+  pad: 15px;
+  width: 100%;
+  text-align: left;
+}
+.modal h1 {
+  margin-top: 0;
+  color: var(--black);
+}
+.modal p {
+  margin-bottom: 0;
+  color: var(--black);
+}
 /* pokemon list styling */
 .pokemon__list__container {
   display: grid;
