@@ -1,3 +1,4 @@
+//  IIFE
 //  pokemonRepository used to create list of pokemon
 let pokemonRepository = (function () {
   let pokemonList = [];
@@ -71,6 +72,9 @@ let pokemonRepository = (function () {
     showDetails: showDetails,
   };
 })();
+
+//  begin code for IIFE components
+
 //  loads data via loadList(), adds to pokemonList, then
 //  creates button for each pokemon via .addListItem()
 pokemonRepository.loadList().then(function () {
@@ -105,7 +109,21 @@ let pokemonButtonCreator = (pokemon) => {
     pokemonRepository.showDetails(pokemon);
   });
 };
+//  end code for IIFE componends
 
+//  begins coding for modal
+
+//  targets modal container and adds 'is visible' class
+let showModal = () => {
+  let modalContainer = document.querySelector('#modal__container');
+  modalContainer.classList.add('is__visible');
+};
+//  adds event listener to trigger previous code to add 'is visible'
+document.querySelector('#show__modal').addEventListener('click', () => {
+  showModal();
+});
+
+/*  registration form currently not in use
 // registration input/button code below
 let form = document.querySelector('#register__form');
 let email = document.querySelector('#email__input');
@@ -130,7 +148,25 @@ let validatePassword = () => {
   showErrorMessage(password, null);
   return true;
 };
-
+//  email validation looking for '@' symbol and a '.'
+let validateEmail = () => {
+  let value = email.value;
+  //  throws error if email field is left blank
+  if (!value) {
+    showErrorMessage(email, 'You must enter a valid email address');
+    return false;
+  }
+  //  throws error if email doesn't contain '@' symbol
+  if (value.indexOf('@') === -1) {
+    showErrorMessage(email, 'You must enter a valid email address');
+    return false;
+  }
+  //  if there's no errors, email is valid
+  showErrorMessage(email, null);
+  return true;
+};
+*/
+/*
 //  default error messsage for email/pass validation
 let showErrorMessage = (input, message) => {
   let container = input.parentElement;
@@ -162,23 +198,4 @@ form.addEventListener('submit', (e) => {
     alert('Success!!');
   }
 });
-
-/*  registration form currently not in use
-  //  email validation looking for '@' symbol and a '.'
-  let validateEmail = () => {
-    let value = email.value;
-    //  throws error if email field is left blank
-    if (!value) {
-      showErrorMessage(email, 'You must enter a valid email address');
-      return false;
-    }
-    //  throws error if email doesn't contain '@' symbol
-    if (value.indexOf('@') === -1) {
-      showErrorMessage(email, 'You must enter a valid email address');
-      return false;
-    }
-    //  if there's no errors, email is valid
-    showErrorMessage(email, null);
-    return true;
-  };
-  */
+*/
