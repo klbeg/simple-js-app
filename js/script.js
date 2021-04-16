@@ -125,6 +125,17 @@ let showModal = (title, text) => {
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal__close');
   closeButtonElement.innerText = 'Close';
+  //  adds listeners to trigger hide modal
+  closeButtonElement.addEventListener('click', hideModal);
+  window.addEventListener('keydown', (e) => {
+    let modalContainer = document.querySelector('#modal__container');
+    if (
+      e.key === 'Escape' &&
+      modalContainer.classList.contains('is__visible')
+    ) {
+      hideModal();
+    }
+  });
 
   let titleElement = document.createElement('h1');
   titleElement.innerText = title;
@@ -141,10 +152,18 @@ let showModal = (title, text) => {
   //  add 'is visible' class
   modalContainer.classList.add('is__visible');
 };
+
 //  adds event listener to trigger previous code to add 'is visible'
 document.querySelector('#show__modal').addEventListener('click', () => {
   showModal('Modal title', 'This is the modal content.');
 });
+
+//  removes 'is visible' from modal__container
+let hideModal = () => {
+  let modalContainer = document.querySelector('#modal__container');
+  modalContainer.classList.remove('is__visible');
+};
+//
 
 /*  registration form currently not in use
 // registration input/button code below
