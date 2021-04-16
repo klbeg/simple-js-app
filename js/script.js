@@ -112,10 +112,31 @@ let pokemonButtonCreator = (pokemon) => {
 //  end code for IIFE componends
 
 //  begins coding for modal
-
-//  targets modal container and adds 'is visible' class
+//  creates all content for modal
 let showModal = () => {
   let modalContainer = document.querySelector('#modal__container');
+  //  clears all existing modal content
+  modalContainer.innerHTML = '';
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  //  add new modal content
+  //  creates close button
+  let closeButtonElement = document.createElement('button');
+  closeButtonElement.classList.add('modal__close');
+  closeButtonElement.innerText = 'Close';
+  // creates h1 element
+  let titleElement = document.createElement('h1');
+  titleElement.innerText = title;
+  //  creates p element
+  let contentElement = document.createElement('p');
+  contentElement.innerText = text;
+  //  appends all created elements
+  modal.appendChild(closeButtonElement);
+  modal.appendChild(titleElement);
+  modal.appendChild(contentElement);
+  modalContainer.appendChild(modal);
+  //  add 'is visible' class
   modalContainer.classList.add('is__visible');
 };
 //  adds event listener to trigger previous code to add 'is visible'
