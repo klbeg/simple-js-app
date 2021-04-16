@@ -113,7 +113,7 @@ let pokemonButtonCreator = (pokemon) => {
 
 //  begins coding for modal
 //  creates all content for modal
-let showModal = () => {
+let showModal = (title, text) => {
   let modalContainer = document.querySelector('#modal__container');
   //  clears all existing modal content
   modalContainer.innerHTML = '';
@@ -143,7 +143,7 @@ let showModal = () => {
 };
 //  adds event listener to trigger previous code to add 'is visible'
 document.querySelector('#show__modal').addEventListener('click', () => {
-  showModal();
+  showModal('Modal title', 'This is the modal content.');
 });
 
 /*  registration form currently not in use
