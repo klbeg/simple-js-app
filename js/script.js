@@ -62,6 +62,11 @@ let pokemonRepository = (function () {
     });
   }
 
+  //  adds event listener to trigger previous code to add 'is visible'
+  document.querySelector('#show__modal').addEventListener('click', () => {
+    showModal('Modal title', 'This is the modal content.');
+  });
+
   //  listener to close modal on esc key press
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal__container');
@@ -71,6 +76,7 @@ let pokemonRepository = (function () {
     ) {
       hideModal();
     }
+
     //  listener to close modal on click outside modal
     modalContainer.addEventListener('click', (e) => {
       let target = e.target;
@@ -159,11 +165,6 @@ let showModal = (title, text) => {
   //  add 'is visible' class
   modalContainer.classList.add('is__visible');
 };
-
-//  adds event listener to trigger previous code to add 'is visible'
-document.querySelector('#show__modal').addEventListener('click', () => {
-  showModal('Modal title', 'This is the modal content.');
-});
 
 //  removes 'is visible' from modal__container
 let hideModal = () => {
