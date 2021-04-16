@@ -117,24 +117,27 @@ let showModal = () => {
   let modalContainer = document.querySelector('#modal__container');
   //  clears all existing modal content
   modalContainer.innerHTML = '';
+
+  //  adding all modal content
   let modal = document.createElement('div');
   modal.classList.add('modal');
-  //  add new modal content
-  //  creates close button
+
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal__close');
   closeButtonElement.innerText = 'Close';
-  // creates h1 element
+
   let titleElement = document.createElement('h1');
   titleElement.innerText = title;
-  //  creates p element
+
   let contentElement = document.createElement('p');
   contentElement.innerText = text;
+
   //  appends all created elements
   modal.appendChild(closeButtonElement);
   modal.appendChild(titleElement);
   modal.appendChild(contentElement);
   modalContainer.appendChild(modal);
+
   //  add 'is visible' class
   modalContainer.classList.add('is__visible');
 };

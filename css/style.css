@@ -9,6 +9,7 @@
   --primaryFont: 'Orelega One', cursive;
   --secondaryFont: 'Oswald', sans-serif;
 }
+
 /* global */
 * {
   font-family: var(--secondaryFont);
@@ -52,6 +53,7 @@ p {
   justify-self: center;
   align-self: start;
 }
+
 /* search bar only in header for mobile view */
 #search__bar {
   display: grid;
@@ -76,6 +78,7 @@ p {
   height: 40px;
   border: 3px solid var(--white);
 }
+
 /* modal styling */
 #modal__container {
   display: none;
@@ -120,6 +123,7 @@ p {
   margin-bottom: 0;
   color: var(--black);
 }
+
 /* pokemon list styling */
 .pokemon__list__container {
   display: grid;
@@ -140,6 +144,7 @@ p {
   border: 5px solid var(--orange);
   text-shadow: var(--textShadow);
 }
+
 /* email/password form styling */
 .input__wrapper,
 .submit__wrapper {
