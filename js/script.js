@@ -133,27 +133,6 @@ let pokemonButtonCreator = (pokemon) => {
 };
 //  end code for IIFE componends
 
-//  begins code for modal dialoge
-function showDialog(title, text) {
-  showModal(title, text);
-
-  let modalContainer = document.querySelector('#modal__container');
-  let modal = modalContainer.querySelector('.modal');
-  //  creates confirm button
-  let confirmButton = document.createElement('button');
-  confirmButton.classList.add('modal__confirm');
-  confirmButton.innerText = 'Confirm';
-  //  creates cancel button
-  let cancelButton = document.createElement('button');
-  cancelButton.classList.add('modal__cancel');
-  cancelButton.innerText = 'Cancel';
-  //  appends created buttons
-  modal.appendChild(confirmButton);
-  modal.appendChild(cancelButton);
-  //  confirms if enter is pressed
-  confirmButton.focus();
-}
-
 //  begins coding for modal
 //  creates all content for modal
 let showModal = (title, text) => {
