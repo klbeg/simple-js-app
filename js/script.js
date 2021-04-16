@@ -147,10 +147,10 @@ function showDialog(title, text) {
   let cancelButton = document.createElement('button');
   cancelButton.classList.add('modal__cancel');
   cancelButton.innerText = 'Cancel';
-
+  //  appends created buttons
   modal.appendChild(confirmButton);
   modal.appendChild(cancelButton);
-
+  //  confirms if enter is pressed
   confirmButton.focus();
 }
 
