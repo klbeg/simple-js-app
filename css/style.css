@@ -78,6 +78,10 @@ p {
 }
 /* modal styling */
 #modal__container {
+  display: none;
+}
+#modal__container.is__visible {
+  display: grid;
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -88,8 +92,6 @@ p {
   background-color: var(--transBlack);
   z-index: 999;
   overflow: auto;
-  display: grid;
-  text-align: center;
 }
 .modal {
   margin: auto;
@@ -98,7 +100,17 @@ p {
   background: var(--white);
   pad: 15px;
   width: 100%;
+  max-width: 700px;
   text-align: left;
+}
+.modal__close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  padding-right: 4px;
+  background: none;
+  color: var(--black);
+  text-decoration: underline;
 }
 .modal h1 {
   margin-top: 0;
