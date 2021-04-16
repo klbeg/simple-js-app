@@ -119,7 +119,6 @@ let showModal = () => {
   modalContainer.innerHTML = '';
   let modal = document.createElement('div');
   modal.classList.add('modal');
-
   //  add new modal content
   //  creates close button
   let closeButtonElement = document.createElement('button');
