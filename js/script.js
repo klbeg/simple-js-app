@@ -62,6 +62,22 @@ let pokemonRepository = (function () {
     });
   }
 
+  //  listener to close modal on esc key press
+  window.addEventListener('keydown', (e) => {
+    let modalContainer = document.querySelector('#modal__container');
+    if (
+      e.key === 'Escape' &&
+      modalContainer.classList.contains('is__visible')
+    ) {
+      hideModal();
+    }
+    //  listener to close modal on click outside modal
+    modalContainer.addEventListener('click', (e) => {
+      let target = e.target;
+      if (target === modalContainer) hideModal();
+    });
+  });
+
   // returns all values
   return {
     add: add,
@@ -127,15 +143,6 @@ let showModal = (title, text) => {
   closeButtonElement.innerText = 'Close';
   //  adds listeners to trigger hide modal
   closeButtonElement.addEventListener('click', hideModal);
-  window.addEventListener('keydown', (e) => {
-    let modalContainer = document.querySelector('#modal__container');
-    if (
-      e.key === 'Escape' &&
-      modalContainer.classList.contains('is__visible')
-    ) {
-      hideModal();
-    }
-  });
 
   let titleElement = document.createElement('h1');
   titleElement.innerText = title;
