@@ -12,11 +12,12 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
-
+  //  turns pokemon item into button and appends
   function addListItem(pokemon) {
     pokemonButtonCreator(pokemon);
   }
-
+  //  loads poke.api > turns to json, then creates object
+  //  with name & detailsUrl.  pushes to pokemonList
   function loadList() {
     return fetch(apiUrl)
       .then(function (response) {
@@ -35,7 +36,8 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-
+  //  uses detailsUrl to acces sprite, height and type of
+  //  each pokemon.
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
@@ -52,7 +54,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-
+  //  console logs pokemon details (sprite, height, types)
   function showDetails(item) {
     loadDetails(item).then(function () {
       console.log(item);
@@ -69,7 +71,8 @@ let pokemonRepository = (function () {
     showDetails: showDetails,
   };
 })();
-
+//  loads data via loadList(), adds to pokemonList, then
+//  creates button for each pokemon via .addListItem()
 pokemonRepository.loadList().then(function () {
   // Now the data is loaded!
   pokemonRepository.getAll().forEach(function (pokemon) {
@@ -107,25 +110,6 @@ let pokemonButtonCreator = (pokemon) => {
 let form = document.querySelector('#register__form');
 let email = document.querySelector('#email__input');
 let password = document.querySelector('#pass__input');
-
-//  email validation looking for '@' symbol and a '.'
-let validateEmail = () => {
-  let value = email.value;
-  //  throws error if email field is left blank
-  if (!value) {
-    showErrorMessage(email, 'You must enter a valid email address');
-    return false;
-  }
-  //  throws error if email doesn't contain '@' symbol
-  if (value.indexOf('@') === -1) {
-    showErrorMessage(email, 'You must enter a valid email address');
-    return false;
-  }
-  //  if there's no errors, email is valid
-  showErrorMessage(email, null);
-  return true;
-};
-
 //  password validation, looking for 8+ characters
 let validatePassword = () => {
   let value = password.value;
@@ -178,3 +162,23 @@ form.addEventListener('submit', (e) => {
     alert('Success!!');
   }
 });
+
+/*  registration form currently not in use
+  //  email validation looking for '@' symbol and a '.'
+  let validateEmail = () => {
+    let value = email.value;
+    //  throws error if email field is left blank
+    if (!value) {
+      showErrorMessage(email, 'You must enter a valid email address');
+      return false;
+    }
+    //  throws error if email doesn't contain '@' symbol
+    if (value.indexOf('@') === -1) {
+      showErrorMessage(email, 'You must enter a valid email address');
+      return false;
+    }
+    //  if there's no errors, email is valid
+    showErrorMessage(email, null);
+    return true;
+  };
+  */
