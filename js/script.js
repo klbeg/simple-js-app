@@ -58,6 +58,7 @@ let pokemonRepository = (function () {
   //  console logs pokemon details (sprite, height, types)
   function showDetails(item) {
     loadDetails(item).then(function () {
+      // call function to display items in modal
       console.log(item);
     });
   }
@@ -96,6 +97,8 @@ let pokemonRepository = (function () {
 })();
 
 //  begin code for IIFE components
+
+function pokeModalPopulator(item) {}
 
 //  loads data via loadList(), adds to pokemonList, then
 //  creates button for each pokemon via .addListItem()

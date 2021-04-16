@@ -106,6 +106,13 @@ p {
   max-width: 700px;
   text-align: left;
 }
+.modal h1 {
+  color: var(--black);
+}
+.modal p {
+  margin-bottom: 0;
+  color: var(--black);
+}
 .modal__close {
   float: right;
   -webkit-appearance: none;
@@ -114,14 +121,6 @@ p {
   background: none;
   color: var(--black);
   text-decoration: underline;
-}
-.modal h1 {
-  margin-top: 0;
-  color: var(--black);
-}
-.modal p {
-  margin-bottom: 0;
-  color: var(--black);
 }
 
 /* pokemon list styling */
