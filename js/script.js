@@ -62,11 +62,11 @@ let pokemonRepository = (function () {
       showModal(item);
     });
   }
-
+  // keeping commented to confirm new code changes work
   //  adds event listener to trigger previous code to add 'is visible'
-  document.querySelector('#show__modal').addEventListener('click', () => {
-    showModal();
-  });
+  //document.querySelector('#show__modal').addEventListener('click', () => {
+  //showModal();
+  //});
 
   //  listener to close modal on esc key press
   window.addEventListener('keydown', (e) => {
