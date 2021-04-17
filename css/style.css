@@ -50,20 +50,17 @@ p {
 /* header styling */
 .pokemon__header__containter {
   background-color: var(--black);
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* width: 100%;
   height: 160px;
   display: grid;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  grid-template-rows: 100px 30px;
-  /* grid-template-columns: auto 50% auto; */
-}
-.pokemon__header__containter h1 {
-  justify-self: center;
-  align-self: start;
+  grid-template-rows: 100px 30px; */
 }
 
-/* search bar only in header for mobile view */
+/* search bar styling */
 #search__bar {
   display: grid;
   grid-template-columns: auto 90px 175px auto;
@@ -209,3 +206,5 @@ p {
     padding-left: 7px;
   }
 }
+
+/* Header styling for larger screens */
