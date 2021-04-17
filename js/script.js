@@ -65,7 +65,7 @@ let pokemonRepository = (function () {
 
   //  adds event listener to trigger previous code to add 'is visible'
   document.querySelector('#show__modal').addEventListener('click', () => {
-    showModal('Modal title', 'This is the modal content.');
+    showModal();
   });
 
   //  listener to close modal on esc key press
@@ -138,15 +138,42 @@ let pokemonButtonCreator = (pokemon) => {
 
 //  begins coding for modal
 //  creates all content for modal
-let showModal = (title, text) => {
+let showModal = (item) => {
   let modalContainer = document.querySelector('#modal__container');
 
   //  clears all existing modal content
   modalContainer.innerHTML = '';
 
-  //  adding all modal content
+  // adding content to modal
   let modal = document.createElement('div');
   modal.classList.add('modal');
+
+  let pokemonInfoContainer = document.createElement('div');
+  pokemonInfoContainer.classList.add('pokemon__info__container');
+
+  let pokemonName = document.createElement('h1');
+  pokemonName.classList.add('pokemon__name');
+  pokemonName.innerText('Pokemon Name');
+
+  let pokemonDetailsContainer = document.createElement('div');
+  pokemonDetailsContainer.classList.add('pokemon__details__container');
+
+  let pokemonTypes = document.createElement('h2');
+  pokemonTypes.classList.add('pokemon__types');
+  pokemonTypes.innerText('Pokemon Types');
+
+  let pokemonHeight = document.createElement('h3');
+  pokemonHeight.classList.add('pokemon__types');
+  pokemonHeight.innerText('Pokemon Height');
+
+  let pokemonSpriteContainer = document.createElement('div');
+  pokemonSpriteContainer.classList.add('pokemon__sprite__container');
+
+  let pokemonSprite = document.createElement('img');
+  pokemonSprite.classList.add('pokemon__sprite');
+  pokemonSpriteContainer.url(
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
+  );
 
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal__close');
@@ -154,27 +181,25 @@ let showModal = (title, text) => {
   //  adds listeners to trigger hide modal
   closeButtonElement.addEventListener('click', hideModal);
 
-  let titleElement = document.createElement('h1');
-  titleElement.innerText = title;
-
-  let contentElement = document.createElement('p');
-  contentElement.innerText = text;
-
-  //  appends all created elements
+  //  appending all created elements
+  modal.appendChild(pokemonInfoContainer);
+  modal.appendChild(pokemonSpriteContainer);
   modal.appendChild(closeButtonElement);
-  modal.appendChild(titleElement);
-  modal.appendChild(contentElement);
+  pokemonInfoContainer.appendChild(pokemonName);
+  pokemonInfoContainer.appendChild(pokemonDetailsContainer);
+  pokemonDetailsContainer.appendChild(pokemonTypes);
+  pokemonDetailsContainer.appendChild(pokemonHeight);
   modalContainer.appendChild(modal);
 
   //  add 'is visible' class
   modalContainer.classList.add('is__visible');
-};
 
-//  removes 'is visible' from modal__container
-let hideModal = () => {
-  let modalContainer = document.querySelector('#modal__container');
-  modalContainer.classList.remove('is__visible');
+  let hideModal = () => {
+    let modalContainer = document.querySelector('#modal__container');
+    modalContainer.classList.remove('is__visible');
+  };
 };
+//  removes 'is visible' from modal__container
 //
 
 /*  registration form currently not in use
