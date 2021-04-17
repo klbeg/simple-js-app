@@ -98,8 +98,6 @@ let pokemonRepository = (function () {
 
 //  begin code for IIFE components
 
-function pokeModalPopulator(item) {}
-
 //  loads data via loadList(), adds to pokemonList, then
 //  creates button for each pokemon via .addListItem()
 pokemonRepository.loadList().then(function () {
@@ -141,13 +139,9 @@ let hideModal = () => {
   modalContainer.classList.remove('is__visible');
 };
 
-let closeButtonElement = document.createElement('button');
-closeButtonElement.classList.add('modal__close');
-closeButtonElement.innerText = 'Close';
-//  adds listeners to trigger hide modal
-closeButtonElement.addEventListener('click', hideModal);
 //  begins coding for modal
 //  creates all content for modal
+
 let showModal = (item) => {
   let modalContainer = document.querySelector('#modal__container');
 
@@ -183,6 +177,12 @@ let showModal = (item) => {
   pokemonSprite.classList.add('pokemon__sprite');
   pokemonSpriteContainer.src =
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
+
+  let closeButtonElement = document.createElement('button');
+  closeButtonElement.classList.add('modal__close');
+  closeButtonElement.innerText = 'Close';
+  //  adds listeners to trigger hide modal
+  closeButtonElement.addEventListener('click', hideModal);
 
   //  appending all created elements
   modal.appendChild(pokemonInfoContainer);
