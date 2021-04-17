@@ -165,7 +165,8 @@ let showModal = (item) => {
 
   let pokemonTypes = document.createElement('h3');
   pokemonTypes.classList.add('pokemon__types');
-  pokemonTypes.innerText = item.types;
+  pokemonTypes.innerText = item.types.type;
+  console.log(item.types.name);
 
   let pokemonHeight = document.createElement('h3');
   pokemonHeight.classList.add('pokemon__types');
