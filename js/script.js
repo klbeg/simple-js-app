@@ -127,7 +127,7 @@ let pokemonButtonCreator = (pokemon) => {
   //  appends 'li' and 'button' to 'ul'
   pokemonListContainer.appendChild(listItem);
   listItem.appendChild(button);
-  button.innerText = pokemon.name;
+  button.innerText = capitalizeFirstLetter(pokemon.name);
   //  event listener for button click
   button.addEventListener('click', function () {
     pokemonRepository.showDetails(pokemon);
@@ -135,13 +135,16 @@ let pokemonButtonCreator = (pokemon) => {
 };
 //  end code for IIFE componends
 
+function capitalizeFirstLetter(item) {
+  return item.charAt(0).toUpperCase() + item.slice(1);
+}
+
+//  begins coding for modal
+//  creates all content for modal
 let hideModal = () => {
   let modalContainer = document.querySelector('#modal__container');
   modalContainer.classList.remove('is__visible');
 };
-
-//  begins coding for modal
-//  creates all content for modal
 
 let showModal = (item) => {
   let modalContainer = document.querySelector('#modal__container');
@@ -158,7 +161,7 @@ let showModal = (item) => {
 
   let pokemonName = document.createElement('h2');
   pokemonName.classList.add('pokemon__name');
-  pokemonName.innerText = item.name;
+  pokemonName.innerText = capitalizeFirstLetter(item.name);
 
   let pokemonDetailsContainer = document.createElement('div');
   pokemonDetailsContainer.classList.add('pokemon__details__container');
@@ -166,10 +169,14 @@ let showModal = (item) => {
   let pokemonTypes = document.createElement('h3');
   pokemonTypes.classList.add('pokemon__types');
   if (item.types.length === 1) {
-    pokemonTypes.innerText = `${item.types[0].type.name}`;
+    pokemonTypes.innerText = `${capitalizeFirstLetter(
+      item.types[0].type.name
+    )}`;
   }
   if (item.types.length === 2) {
-    pokemonTypes.innerText = `${item.types[0].type.name}, ${item.types[1].type.name}`;
+    pokemonTypes.innerText = `${capitalizeFirstLetter(
+      item.types[0].type.name
+    )}, ${capitalizeFirstLetter(item.types[1].type.name)}`;
   }
   console.log(item.types[0].type.name);
 
