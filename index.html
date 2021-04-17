@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- starts header  -->
-    <div class="pokemon__header_containter">
+    <div class="pokemon__header__containter">
       <h1>PokeDex</h1>
       <form action="search" id="search__bar">
         <div class="search__label__container">
@@ -26,7 +26,25 @@
     <!-- end of header section -->
     <!-- modal code starts here -->
     <button id="show__modal">Show modal</button>
-    <div id="modal__container"></div>
+    <div id="modal__container" class="is__visible">
+      <div class="modal">
+        <!-- class="is__visible" -->
+        <!-- <div class="pokemon__info__container">
+          <h2 class="pokemon__name">Vulvasaur</h2>
+          <div class="pokemon__details__container">
+            <h3 class="pokemon__types">Grass, Poison</h3>
+            <h3 class="pokemon__height">Height: 7</h3>
+          </div>
+        </div>
+        <div class="pokemon__sprite__container">
+          <img
+            class="pokemon__sprite"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+            alt=""
+          />
+        </div> -->
+      </div>
+    </div>
     <!-- starts main content -->
     <ul class="pokemon__list__container"></ul>
     <script src="js/script.js"></script>
