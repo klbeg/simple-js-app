@@ -59,7 +59,7 @@ let pokemonRepository = (function () {
   function showDetails(item) {
     loadDetails(item).then(function () {
       // call function to display items in modal
-      console.log(item);
+      showModal(item);
     });
   }
 
