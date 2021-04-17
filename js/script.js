@@ -174,7 +174,7 @@ let showModal = (item) => {
   console.log(item.types[0].type.name);
 
   let pokemonHeight = document.createElement('h3');
-  pokemonHeight.classList.add('pokemon__types');
+  pokemonHeight.classList.add('pokemon__height');
   pokemonHeight.innerText = `Height: ${item.height}`;
 
   let pokemonSpriteContainer = document.createElement('div');
