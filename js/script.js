@@ -60,6 +60,7 @@ let pokemonRepository = (function () {
     loadDetails(item).then(function () {
       // call function to display items in modal
       showModal(item);
+      console.log(item);
     });
   }
   // keeping commented to confirm new code changes work
@@ -157,26 +158,26 @@ let showModal = (item) => {
 
   let pokemonName = document.createElement('h2');
   pokemonName.classList.add('pokemon__name');
-  pokemonName.innerText = 'Bulbasaur';
+  pokemonName.innerText = item.name;
 
   let pokemonDetailsContainer = document.createElement('div');
   pokemonDetailsContainer.classList.add('pokemon__details__container');
 
   let pokemonTypes = document.createElement('h3');
   pokemonTypes.classList.add('pokemon__types');
-  pokemonTypes.innerText = 'Pokemon Types';
+  pokemonTypes.innerText = item.types;
 
   let pokemonHeight = document.createElement('h3');
   pokemonHeight.classList.add('pokemon__types');
-  pokemonHeight.innerText = 'Pokemon Height';
+  pokemonHeight.innerText = `Height: ${item.height}`;
 
   let pokemonSpriteContainer = document.createElement('div');
   pokemonSpriteContainer.classList.add('pokemon__sprite__container');
 
   let pokemonSprite = document.createElement('img');
   pokemonSprite.classList.add('pokemon__sprite');
-  pokemonSpriteContainer.src =
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png';
+  pokemonSpriteContainer.src = item.imageUrl;
+  console.log(`${item.imageUrl}`);
 
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal__close');
