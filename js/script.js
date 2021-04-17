@@ -165,8 +165,13 @@ let showModal = (item) => {
 
   let pokemonTypes = document.createElement('h3');
   pokemonTypes.classList.add('pokemon__types');
-  pokemonTypes.innerText = item.types.type;
-  console.log(item.types.name);
+  if (item.types.length === 1) {
+    pokemonTypes.innerText = `${item.types[0].type.name}`;
+  }
+  if (item.types.length === 2) {
+    pokemonTypes.innerText = `${item.types[0].type.name}, ${item.types[1].type.name}`;
+  }
+  console.log(item.types[0].type.name);
 
   let pokemonHeight = document.createElement('h3');
   pokemonHeight.classList.add('pokemon__types');
@@ -177,8 +182,8 @@ let showModal = (item) => {
 
   let pokemonSprite = document.createElement('img');
   pokemonSprite.classList.add('pokemon__sprite');
-  pokemonSpriteContainer.src = item.imageUrl;
-  console.log(`${item.imageUrl}`);
+  pokemonSprite.src = item.imageUrl;
+  // console.log(`${item.imageUrl}`);
 
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal__close');
@@ -194,6 +199,7 @@ let showModal = (item) => {
   pokemonInfoContainer.appendChild(pokemonDetailsContainer);
   pokemonDetailsContainer.appendChild(pokemonTypes);
   pokemonDetailsContainer.appendChild(pokemonHeight);
+  pokemonSpriteContainer.appendChild(pokemonSprite);
   modalContainer.appendChild(modal);
 
   //  add 'is visible' class
