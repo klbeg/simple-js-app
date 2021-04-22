@@ -121,17 +121,26 @@ function isValidPokemon(pokemon) {
 //  adds event listener to log the pokemon object in the console
 let pokemonButtonCreator = (pokemon) => {
   //  targets 'ul' creates 'li' and 'button'
-  let pokemonListContainer = document.querySelector('ul');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
+  let pokemonListContainer = $('.pokemon__list__container');
+  //let pokemonListContainer = document.querySelector('ul');
+  let listItem = $('<li></li>');
+  //let listItem = document.createElement('li');
+  let button = $(
+    '<button class="" data-toggle="modal" data-target="#modal">' +
+      capitalizeFirstLetter(pokemon.name) +
+      '</button>'
+  );
+  //let button = document.createElement('button');
   //  appends 'li' and 'button' to 'ul'
-  pokemonListContainer.appendChild(listItem);
-  listItem.appendChild(button);
-  button.innerText = capitalizeFirstLetter(pokemon.name);
+  pokemonListContainer.append(listItem);
+  //pokemonListContainer.appendChild(listItem);
+  listItem.append(button);
+  //listItem.appendChild(button);
+  //capitalizeFirstLetter(pokemon.name);
   //  event listener for button click
-  button.addEventListener('click', function () {
-    pokemonRepository.showDetails(pokemon);
-  });
+  //button.addEventListener('click', function () {
+  //pokemonRepository.showDetails(pokemon);
+  //});
 };
 //  end code for IIFE componends
 
