@@ -59,7 +59,7 @@ let pokemonRepository = (function () {
   function showDetails(item) {
     loadDetails(item).then(function () {
       // call function to display items in modal
-      showModal(item);
+      //showModal(item);
       console.log(item);
     });
   }
@@ -70,8 +70,6 @@ let pokemonRepository = (function () {
   //});
 
   //  listener to close modal on esc key press
-  //  to be removed upon finishing bootstrap modal
-  /*
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal__container');
     if (
@@ -80,13 +78,13 @@ let pokemonRepository = (function () {
     ) {
       hideModal();
     }
+
     //  listener to close modal on click outside modal
     modalContainer.addEventListener('click', (e) => {
       let target = e.target;
       if (target === modalContainer) hideModal();
     });
   });
-  */
 
   // returns all values
   return {
@@ -131,9 +129,9 @@ let pokemonButtonCreator = (pokemon) => {
   listItem.appendChild(button);
   button.innerText = capitalizeFirstLetter(pokemon.name);
   //  event listener for button click
-  //button.addEventListener('click', function () {
-  pokemonRepository.showDetails(pokemon);
-  //});
+  button.addEventListener('click', function () {
+    pokemonRepository.showDetails(pokemon);
+  });
 };
 //  end code for IIFE componends
 
@@ -148,39 +146,6 @@ let hideModal = () => {
   modalContainer.classList.remove('is__visible');
 };
 
-let showModal = (item) => {
-  let modalContainer = $('.modal');
-
-  modalContainer.innerHTML = '';
-
-  //  adding content to modal
-  let modalDialog = $(`<div class="modal-dialog modal-dialog-centered"></div>`);
-  let modalContent = $(`<div class='modal__content></div>`);
-  let modalHeader = $(
-    `<div class='modal-header modal__header__content'></div>`
-  );
-  let pokemonName = $(`<h2>${capitalizeFirstLetter(item.name)}`);
-  let closeButton = $(
-    `<crossOutButton class='xOutButton' type='button' data-dismiss='modal' aria-label='close'>X</crossOutButton>`
-  );
-  let modalBody = $(`<div class='modal-body'></div>`);
-  let modalBodyFormat = $(`<div class='row'></div>`);
-  let pokmoenDetailsContainer = $(`<div class='col-sm-8'></div>`);
-  //  pokemonTypes will most likely need to change to display correctly
-  let pokemonTypes = $(`Types: ${capitalizeFirstLetter(item.types.type.name)}`);
-  let pokemonHeight = $(`Height: ${item.height}`);
-  let pokemonSprite = $(
-    `<img class="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" aria-hidden="true">`
-  );
-
-  //  appending everything
-  modalContainer.append(modalDialog);
-  modalDialog.append(modalContent);
-  modalContent.append(modalHeader);
-  modalHeader.append(pokemonName);
-};
-
-/*
 let showModal = (item) => {
   let modalContainer = document.querySelector('#modal__container');
 
@@ -247,7 +212,6 @@ let showModal = (item) => {
   //  add 'is visible' class
   modalContainer.classList.add('is__visible');
 };
-*/
 //  removes 'is visible' from modal__container
 //
 
