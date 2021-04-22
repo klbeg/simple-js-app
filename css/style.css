@@ -86,6 +86,19 @@ p {
 }
 
 /* modal styling */
+.white__text {
+  color: var(--white);
+}
+.xOutButton {
+  font-size: 1.5rem;
+}
+.modal-content {
+  border: var(--orangeBorder);
+  background-color: var(--modalBackground);
+}
+.modal__header__border {
+  border-bottom: 1px solid var(--orange);
+}
 /*
 #modal__container {
   display: none;

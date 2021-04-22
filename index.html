@@ -38,19 +38,25 @@
     <!-- <div id="modal__container"> -->
       <button class="btn btn-primary" class="btn btn-secondary" data-toggle="modal" data-target="#modal">Open Modal</button>
       <div class="modal" id="modal" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 style="color: black;">modal title</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="close">X</button>
+            <div class="modal-header modal__header__border">
+              <h2 class="">Vulvasaur</h2>
+              <crossOutButton class="xOutButton align-middle" type="button" data-dismiss="modal" aria-label="close">X</crossOutButton>
             </div>
             <div class="modal-body">
               <!-- main modal content here  -->
+              <div class="row">
+                <div class="col-sm-8">
+                  <h3 class="my-3">Types: Fire, Ass-water</h3>
+                  <h3 class="">Height: 7</h3>  
+                </div>
+                <img class="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" aria-hidden="true">
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- modal content goes here  -->
     </div>
     <!-- starts main content -->
     <ul class="pokemon__list__container"></ul>
