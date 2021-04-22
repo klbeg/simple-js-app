@@ -117,24 +117,26 @@ function isValidPokemon(pokemon) {
   });
 }
 
-//  appends 'li' > 'button{pokemon name}' to pokemon 'ul' in index.html
-//  adds event listener to log the pokemon object in the console
+//  creates a button for each item in pokemonRepository
+//  when clicked, button opens modal
 let pokemonButtonCreator = (pokemon) => {
-  //  targets 'ul' creates 'li' and 'button'
   let pokemonListContainer = $('.pokemon__list__container');
-  //let pokemonListContainer = document.querySelector('ul');
   let listItem = $('<li></li>');
-  //let listItem = document.createElement('li');
   let button = $(
     '<button class="" data-toggle="modal" data-target="#modal">' +
       capitalizeFirstLetter(pokemon.name) +
       '</button>'
   );
-  //let button = document.createElement('button');
+  $(button).click(populateModal(pokemon));
+  //button.addEventListener('click', populateModal(pokemon));
   //  appends 'li' and 'button' to 'ul'
   pokemonListContainer.append(listItem);
-  //pokemonListContainer.appendChild(listItem);
   listItem.append(button);
+
+  //let listItem = document.createElement('li');
+  //let button = document.createElement('button');
+  //pokemonListContainer.appendChild(listItem);
+  //let pokemonListContainer = document.querySelector('ul');
   //listItem.appendChild(button);
   //capitalizeFirstLetter(pokemon.name);
   //  event listener for button click
@@ -147,14 +149,31 @@ let pokemonButtonCreator = (pokemon) => {
 function capitalizeFirstLetter(item) {
   return item.charAt(0).toUpperCase() + item.slice(1);
 }
+function populateModal(item) {
+  let modalTitle = $('#modal__title');
+  let modalTypes = $('#modal__types');
+  let modalHeight = $('#modal__height');
+  let modalImageContainer = $('#modal__image__container');
+  //let modalImage = $('#modal__image');
+  modalTitle.empty();
+  modalTypes.empty();
+  modalHeight.empty();
+  modalImageContainer.empty();
+  //modalImage.empty();
 
+  console.log(item);
+}
 //  begins coding for modal
 //  creates all content for modal
+/*
+//no necessary with bootstrap
 let hideModal = () => {
   let modalContainer = document.querySelector('#modal__container');
   modalContainer.classList.remove('is__visible');
 };
+*/
 
+/*
 let showModal = (item) => {
   let modalContainer = document.querySelector('#modal__container');
 
@@ -187,6 +206,7 @@ let showModal = (item) => {
       item.types[0].type.name
     )}, ${capitalizeFirstLetter(item.types[1].type.name)}`;
   }
+
   console.log(item.types[0].type.name);
 
   let pokemonHeight = document.createElement('h3');
@@ -221,6 +241,7 @@ let showModal = (item) => {
   //  add 'is visible' class
   modalContainer.classList.add('is__visible');
 };
+*/
 //  removes 'is visible' from modal__container
 //
 
