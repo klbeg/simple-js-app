@@ -86,6 +86,7 @@ p {
 }
 
 /* modal styling */
+/*
 #modal__container {
   display: none;
 }
@@ -148,7 +149,7 @@ p {
   background: none;
   text-decoration: underline;
 }
-
+*/
 /* pokemon list styling */
 .pokemon__list__container {
   display: grid;
