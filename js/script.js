@@ -131,9 +131,9 @@ let pokemonButtonCreator = (pokemon) => {
   listItem.appendChild(button);
   button.innerText = capitalizeFirstLetter(pokemon.name);
   //  event listener for button click
-  button.addEventListener('click', function () {
-    pokemonRepository.showDetails(pokemon);
-  });
+  //button.addEventListener('click', function () {
+  pokemonRepository.showDetails(pokemon);
+  //});
 };
 //  end code for IIFE componends
 
@@ -159,7 +159,6 @@ let showModal = (item) => {
   let modalHeader = $(
     `<div class='modal-header modal__header__content'></div>`
   );
-  //  most likely won't work with () inside of ${}
   let pokemonName = $(`<h2>${capitalizeFirstLetter(item.name)}`);
   let closeButton = $(
     `<crossOutButton class='xOutButton' type='button' data-dismiss='modal' aria-label='close'>X</crossOutButton>`
@@ -168,8 +167,8 @@ let showModal = (item) => {
   let modalBodyFormat = $(`<div class='row'></div>`);
   let pokmoenDetailsContainer = $(`<div class='col-sm-8'></div>`);
   //  pokemonTypes will most likely need to change to display correctly
-  //let pokemonTypes = $(`Types: ${capitalizeFirstLetter(item.types.type.name)}`);
-  //let pokemonHeight = $(`Height: ${item.height}`);
+  let pokemonTypes = $(`Types: ${capitalizeFirstLetter(item.types.type.name)}`);
+  let pokemonHeight = $(`Height: ${item.height}`);
   let pokemonSprite = $(
     `<img class="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" aria-hidden="true">`
   );
