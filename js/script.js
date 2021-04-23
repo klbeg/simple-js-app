@@ -127,7 +127,7 @@ let pokemonButtonCreator = (pokemon) => {
       capitalizeFirstLetter(pokemon.name) +
       '</button>'
   );
-  $(button).click(populateModal(pokemon));
+  $(button).click(() => populateModal(pokemon));
   //button.addEventListener('click', populateModal(pokemon));
   //  appends 'li' and 'button' to 'ul'
   pokemonListContainer.append(listItem);
@@ -160,6 +160,8 @@ function populateModal(item) {
   modalHeight.empty();
   modalImageContainer.empty();
   //modalImage.empty();
+
+  $(modalTitle).text(capitalizeFirstLetter(item.name));
 
   console.log(item);
 }
