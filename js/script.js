@@ -105,7 +105,8 @@ let pokemonButtonCreator = (pokemon) => {
       capitalizeFirstLetter(pokemon.name) +
       '</button>'
   );
-
+  //  on click, calls showDetails to grab pokemon details and push them
+  //  to populateModal function
   $(button).click(() => pokemonRepository.showDetails(pokemon));
 
   //  appends 'li' and 'button' to 'ul'
@@ -131,11 +132,13 @@ function populateModal(item) {
 
   $(modalTitle).text(capitalizeFirstLetter(item.name));
   $(modalHeight).text('Height: ' + item.height);
+  $(modalTypes).text('Type(s): ' + pokemonTypesFilter(item));
   //console.log(item.types);
 }
 let pokemonTypesFilter = (item) => {
   return item.types.map(
-    (type) => console.log(type.type.name)
+    (types) =>
+      ' ' + types.type.name.charAt(0).toUpperCase() + types.type.name.slice(1)
     //type.name.charAt(0).toUpperCase() + type.name.slice(1)
   );
 };
