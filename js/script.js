@@ -63,29 +63,7 @@ let pokemonRepository = (function () {
       //showModal(item);
     });
   }
-  // keeping commented to confirm new code changes work
-  //  adds event listener to trigger previous code to add 'is visible'
-  //document.querySelector('#show__modal').addEventListener('click', () => {
-  //showModal();
-  //});
 
-  /*
-  //  listener to close modal on esc key press
-  window.addEventListener('keydown', (e) => {
-    let modalContainer = document.querySelector('#modal__container');
-    if (
-      e.key === 'Escape' &&
-      modalContainer.classList.contains('is__visible')
-    ) {
-      hideModal();
-    }
-    //  listener to close modal on click outside modal
-    modalContainer.addEventListener('click', (e) => {
-      let target = e.target;
-      if (target === modalContainer) hideModal();
-    });
-  });
-  */
   // returns all values
   return {
     add: add,
@@ -127,23 +105,12 @@ let pokemonButtonCreator = (pokemon) => {
       capitalizeFirstLetter(pokemon.name) +
       '</button>'
   );
-  //$(button).click(() => populateModal(pokemon));
+
   $(button).click(() => pokemonRepository.showDetails(pokemon));
-  //button.addEventListener('click', populateModal(pokemon));
+
   //  appends 'li' and 'button' to 'ul'
   pokemonListContainer.append(listItem);
   listItem.append(button);
-
-  //let listItem = document.createElement('li');
-  //let button = document.createElement('button');
-  //pokemonListContainer.appendChild(listItem);
-  //let pokemonListContainer = document.querySelector('ul');
-  //listItem.appendChild(button);
-  //capitalizeFirstLetter(pokemon.name);
-  //  event listener for button click
-  //button.addEventListener('click', function () {
-  //pokemonRepository.showDetails(pokemon);
-  //});
 };
 //  end code for IIFE componends
 
@@ -164,7 +131,6 @@ function populateModal(item) {
 
   $(modalTitle).text(capitalizeFirstLetter(item.name));
   $(modalHeight).text('Height: ' + item.height);
-  // $(modalTypes).text('Type(s): ' + pokemonTypesFilter(item));
   //console.log(item.types);
 }
 let pokemonTypesFilter = (item) => {
@@ -174,161 +140,3 @@ let pokemonTypesFilter = (item) => {
   );
 };
 //item.types[1].type.name
-//  begins coding for modal
-//  creates all content for modal
-/*
-//no necessary with bootstrap
-let hideModal = () => {
-  let modalContainer = document.querySelector('#modal__container');
-  modalContainer.classList.remove('is__visible');
-};
-*/
-
-/*
-let showModal = (item) => {
-  let modalContainer = document.querySelector('#modal__container');
-
-  //  clears all existing modal content
-  modalContainer.innerHTML = '';
-
-  // adding content to modal
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
-
-  let pokemonInfoContainer = document.createElement('div');
-  pokemonInfoContainer.classList.add('pokemon__info__container');
-
-  let pokemonName = document.createElement('h2');
-  pokemonName.classList.add('pokemon__name');
-  pokemonName.innerText = capitalizeFirstLetter(item.name);
-
-  let pokemonDetailsContainer = document.createElement('div');
-  pokemonDetailsContainer.classList.add('pokemon__details__container');
-
-  let pokemonTypes = document.createElement('h3');
-  pokemonTypes.classList.add('pokemon__types');
-  if (item.types.length === 1) {
-    pokemonTypes.innerText = `${capitalizeFirstLetter(
-      item.types[0].type.name
-    )}`;
-  }
-  if (item.types.length === 2) {
-    pokemonTypes.innerText = `${capitalizeFirstLetter(
-      item.types[0].type.name
-    )}, ${capitalizeFirstLetter(item.types[1].type.name)}`;
-  }
-
-  console.log(item.types[0].type.name);
-
-  let pokemonHeight = document.createElement('h3');
-  pokemonHeight.classList.add('pokemon__height');
-  pokemonHeight.innerText = `Height: ${item.height}`;
-
-  let pokemonSpriteContainer = document.createElement('div');
-  pokemonSpriteContainer.classList.add('pokemon__sprite__container');
-
-  let pokemonSprite = document.createElement('img');
-  pokemonSprite.classList.add('pokemon__sprite');
-  pokemonSprite.src = item.imageUrl;
-  // console.log(`${item.imageUrl}`);
-
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal__close');
-  closeButtonElement.innerText = 'Close';
-  //  adds listeners to trigger hide modal
-  closeButtonElement.addEventListener('click', hideModal);
-
-  //  appending all created elements
-  modal.appendChild(pokemonInfoContainer);
-  modal.appendChild(pokemonSpriteContainer);
-  modal.appendChild(closeButtonElement);
-  pokemonInfoContainer.appendChild(pokemonName);
-  pokemonInfoContainer.appendChild(pokemonDetailsContainer);
-  pokemonDetailsContainer.appendChild(pokemonTypes);
-  pokemonDetailsContainer.appendChild(pokemonHeight);
-  pokemonSpriteContainer.appendChild(pokemonSprite);
-  modalContainer.appendChild(modal);
-
-  //  add 'is visible' class
-  modalContainer.classList.add('is__visible');
-};
-*/
-//  removes 'is visible' from modal__container
-//
-
-/*  registration form currently not in use
-// registration input/button code below
-let form = document.querySelector('#register__form');
-let email = document.querySelector('#email__input');
-let password = document.querySelector('#pass__input');
-//  password validation, looking for 8+ characters
-let validatePassword = () => {
-  let value = password.value;
-  //  throws error if password field is left blank
-  if (!value) {
-    showErrorMessage(password, 'Password is a required field.');
-    return false;
-  }
-  //  throws error if password is less than 8 characters
-  if (value.length < 8) {
-    showErrorMessage(
-      password,
-      'Your pasword needs to be at least 8 characters long.'
-    );
-    return false;
-  }
-  //  if there's no errors, password is valid
-  showErrorMessage(password, null);
-  return true;
-};
-//  email validation looking for '@' symbol and a '.'
-let validateEmail = () => {
-  let value = email.value;
-  //  throws error if email field is left blank
-  if (!value) {
-    showErrorMessage(email, 'You must enter a valid email address');
-    return false;
-  }
-  //  throws error if email doesn't contain '@' symbol
-  if (value.indexOf('@') === -1) {
-    showErrorMessage(email, 'You must enter a valid email address');
-    return false;
-  }
-  //  if there's no errors, email is valid
-  showErrorMessage(email, null);
-  return true;
-};
-*/
-/*
-//  default error messsage for email/pass validation
-let showErrorMessage = (input, message) => {
-  let container = input.parentElement;
-  let error = container.querySelector('.error__message');
-  //  if an error currently exists, remove it
-  if (error) {
-    container.removeChild(error);
-  }
-  //  if a message exists, adds div containing error message
-  if (message) {
-    let error = document.createElement('div');
-    error.classList.add('error__message');
-    error.innerText = message;
-    container.appendChild(error);
-  }
-};
-
-//  form validation
-let validateForm = () => {
-  let isValidEmail = validateEmail();
-  let isValidPassword = validatePassword();
-  return isValidEmail && isValidPassword;
-};
-
-//  submit button event listener
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateForm()) {
-    alert('Success!!');
-  }
-});
-*/
