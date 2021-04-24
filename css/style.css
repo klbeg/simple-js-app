@@ -52,12 +52,6 @@ p {
   background-color: var(--black);
   display: flex;
   justify-content: center;
-  /* width: 100%;
-  height: 160px;
-  display: grid;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  grid-template-rows: 100px 30px; */
 }
 
 /* search bar styling */
@@ -99,70 +93,7 @@ p {
 .modal__header__border {
   border-bottom: 1px solid var(--orange);
 }
-/*
-#modal__container {
-  display: none;
-}
-#modal__container.is__visible {
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--transBlack);
-  z-index: 998;
-  overflow: auto;
-}
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  background: var(--modalBackground);
-  min-width: 350px;
-  max-width: 700px;
-  border: var(--shadowOrangeBorder);
-}
-.pokemon__info__container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.pokemon__name {
-  text-shadow: var(--textShadow);
-}
-.pokemon__types {
-  font-family: var(--secondaryFont);
-}
-.pokemon__header_containter {
-  display: flex;
-  justify-content: center;
-}
-.pokemon__height {
-  font-family: var(--secondaryFont);
-}
-.pokemon__sprite__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 15px;
-}
-.pokemon__sprite {
-  object-fit: contain;
-}
-.modal__close {
-  align-self: end;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  text-decoration: underline;
-}
-*/
+
 /* pokemon list styling */
 .pokemon__list__container {
   display: grid;
@@ -184,11 +115,10 @@ p {
   text-shadow: var(--textShadow);
 }
 
+/* currently removed. may be re-implemented */
 /* email/password form styling */
-.input__wrapper,
-.submit__wrapper {
-  display: none; /* toggled off while figuring out page layout */
-  /* display: grid; */
+/* .input__wrapper,
+.submit__wrapper { *
   grid-template-columns: 17% 45% auto;
 }
 .submit__wrapper button {
@@ -197,7 +127,7 @@ p {
 .error__message {
   grid-column-start: 3;
 }
-
+*/
 @media screen and (max-width: 375px) {
   .modal {
     flex-direction: column;
