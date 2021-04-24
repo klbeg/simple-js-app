@@ -22,10 +22,10 @@
     <!-- starts header  -->
     <div class="pokemon__header__containter row justify-content-center">
       <div class="header__content__container justify-content-center">
-        <div class="header__title__container row">
+        <div class="header__title__container">  <!--- add class of row to center properly-->
           <h1>PokeDex</h1>
         </div>
-        <div class="header__search__container">
+        <div class="header__search__container container">
           <form action="search" id="search__bar">
             <div class="search__label__container">
               <label id="search__label" for="search__input">Search</label>
@@ -37,22 +37,19 @@
     </div>
     <!-- end of header section -->
     <!-- modal code starts here -->
-    <!-- <div id="modal__container"> -->
       <div class="modal" id="modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header modal__header__border">
-              <h2 class="" id="modal__title">Vulvasaur</h2>
-              <!-- <h2 class="">Vulvasaur</h2> -->
+              <h2 class="" id="modal__title"></h2>
               <crossOutButton class="xOutButton align-middle" type="button" data-dismiss="modal" aria-label="close">X</crossOutButton>
             </div>
             <div class="modal-body">
               <!-- main modal content here  -->
               <div class="row">
                 <div class="col-sm-8">
-                  <h3 class="my-3" id="modal__types">Types: Fire, Ass-water</h3>
-                  <!-- <h3 class="my-3">Types: Fire, Ass-water</h3> -->
-                  <h3 class="" id="modal__height">Height: 7</h3>  
+                  <h3 class="my-3" id="modal__types"></h3>
+                  <h3 class="" id="modal__height"></h3>  
                   <!-- <h3 class="">Height: 7</h3>   -->
                 </div>
                 <div id="modal__image__container">

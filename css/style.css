@@ -57,7 +57,7 @@ p {
 
 /* search bar styling */
 .header__search__container {
-  width: 265px;
+  /* width: 265px; */
 }
 #search__bar {
   display: grid;
