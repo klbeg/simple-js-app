@@ -59,8 +59,8 @@ let pokemonRepository = (function () {
   function showDetails(item) {
     loadDetails(item).then(function () {
       // call function to display items in modal
+      populateModal(item);
       //showModal(item);
-      console.log(item);
     });
   }
   // keeping commented to confirm new code changes work
@@ -69,6 +69,7 @@ let pokemonRepository = (function () {
   //showModal();
   //});
 
+  /*
   //  listener to close modal on esc key press
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal__container');
@@ -78,14 +79,13 @@ let pokemonRepository = (function () {
     ) {
       hideModal();
     }
-
     //  listener to close modal on click outside modal
     modalContainer.addEventListener('click', (e) => {
       let target = e.target;
       if (target === modalContainer) hideModal();
     });
   });
-
+  */
   // returns all values
   return {
     add: add,
@@ -127,7 +127,8 @@ let pokemonButtonCreator = (pokemon) => {
       capitalizeFirstLetter(pokemon.name) +
       '</button>'
   );
-  $(button).click(() => populateModal(pokemon));
+  //$(button).click(() => populateModal(pokemon));
+  $(button).click(() => pokemonRepository.showDetails(pokemon));
   //button.addEventListener('click', populateModal(pokemon));
   //  appends 'li' and 'button' to 'ul'
   pokemonListContainer.append(listItem);
@@ -162,9 +163,17 @@ function populateModal(item) {
   //modalImage.empty();
 
   $(modalTitle).text(capitalizeFirstLetter(item.name));
-
-  console.log(item);
+  $(modalHeight).text('Height: ' + item.height);
+  // $(modalTypes).text('Type(s): ' + pokemonTypesFilter(item));
+  //console.log(item.types);
 }
+let pokemonTypesFilter = (item) => {
+  return item.types.map(
+    (type) => console.log(type.type.name)
+    //type.name.charAt(0).toUpperCase() + type.name.slice(1)
+  );
+};
+//item.types[1].type.name
 //  begins coding for modal
 //  creates all content for modal
 /*
