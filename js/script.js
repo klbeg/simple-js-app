@@ -132,10 +132,10 @@ function populateModal(item) {
 
   $(modalTitle).text(capitalizeFirstLetter(item.name));
   $(modalHeight).text('Height: ' + item.height);
-  $(modalTypes).text('Type(s): ' + pokemonTypesFilter(item));
+  $(modalTypes).text('Type(s): ' + pokemonTypesFormatter(item));
   //console.log(item.types);
 }
-let pokemonTypesFilter = (item) => {
+let pokemonTypesFormatter = (item) => {
   return item.types.map(
     (types) =>
       ' ' + types.type.name.charAt(0).toUpperCase() + types.type.name.slice(1)
