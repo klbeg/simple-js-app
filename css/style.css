@@ -75,10 +75,8 @@ p {
   background-color: var(--black);
 }
 .header__content__container {
-  max-width: 900px;
 }
 .header__title__container {
-  width: 280px;
 }
 
 /* search bar styling */
@@ -87,7 +85,6 @@ p {
 #search__bar {
   display: grid;
   grid-template-columns: auto auto;
-  width: 265px;
 }
 .search__label__container {
   grid-column-start: 1;
