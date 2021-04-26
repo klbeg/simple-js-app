@@ -73,9 +73,6 @@ p {
 /* header styling */
 .pokemon__header__containter {
   background-color: var(--black);
-
-  /* max-width: 100%;
-  margin-left: 5px; */
 }
 .header__content__container {
   max-width: 900px;
@@ -146,15 +143,6 @@ p {
 }
 */
 @media screen and (max-width: 375px) {
-  /* .modal {
-    flex-direction: column;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-  
-    min-width: 270px;
-    height: 230px;
-  } */
   .pokemon__name {
     font-size: 30px;
   }
@@ -162,9 +150,6 @@ p {
   .pokemon__types {
     font-size: 15px;
   }
-  /* .modal__close {
-    padding-left: 7px;
-  } */
 }
 
 /* Header styling for larger screens */
