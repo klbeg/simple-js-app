@@ -23,7 +23,7 @@
 }
 h1 {
   font-family: var(--primaryFont);
-  font-size: 75px;
+  font-size: 70px;
   font-weight: 300;
 }
 h2 {
@@ -33,6 +33,7 @@ h3 {
   font-size: 20px;
 }
 body {
+  /* background-color: var(--white); */
   background-color: var(--black);
   background-image: url(../img/pickachu-background.jpg);
   background-size: 300%;
@@ -46,18 +47,45 @@ p {
 }
 
 /* index.html stylings */
+/* modal styling */
+.white__text {
+  color: var(--white);
+}
+#modal {
+}
+.modal__dialog {
+}
+.modal__content {
+  display: flex;
+  align-self: center;
+  max-width: 100%;
+  margin-right: 0;
+  border: var(--orangeBorder);
+  background-color: var(--modalBackground);
+}
+.xOutButton {
+  font-size: 1.5rem;
+}
+.modal__header__border {
+  border-bottom: 1px solid var(--orange);
+}
 
 /* header styling */
 .pokemon__header__containter {
   background-color: var(--black);
+
+  /* max-width: 100%;
+  margin-left: 5px; */
 }
 .header__content__container {
   max-width: 900px;
 }
+.header__title__container {
+  width: 280px;
+}
 
 /* search bar styling */
 .header__search__container {
-  /* width: 265px; */
 }
 #search__bar {
   display: grid;
@@ -78,30 +106,15 @@ p {
 #search__input {
   grid-column-start: 2;
   background-color: var(--black);
-  width: 175px;
+  width: 190px;
   height: 40px;
   border: 3px solid var(--white);
-}
-
-/* modal styling */
-.white__text {
-  color: var(--white);
-}
-.xOutButton {
-  font-size: 1.5rem;
-}
-.modal-content {
-  border: var(--orangeBorder);
-  background-color: var(--modalBackground);
-}
-.modal__header__border {
-  border-bottom: 1px solid var(--orange);
 }
 
 /* pokemon list styling */
 .pokemon__list__container {
   display: grid;
-  grid-template-columns: auto 300px auto;
+  grid-template-columns: auto 280px auto;
   list-style: none;
   width: 100%;
   margin: 0, auto;
@@ -111,7 +124,7 @@ p {
   padding: 5px 0;
 }
 .pokemon__list__container li button {
-  width: 300px;
+  width: 280px;
   padding-bottom: 4px;
   font-size: 35px;
   background-color: var(--transBlack);
@@ -133,15 +146,15 @@ p {
 }
 */
 @media screen and (max-width: 375px) {
-  .modal {
+  /* .modal {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
-    /* width: 100%; */
+  
     min-width: 270px;
     height: 230px;
-  }
+  } */
   .pokemon__name {
     font-size: 30px;
   }
@@ -149,10 +162,9 @@ p {
   .pokemon__types {
     font-size: 15px;
   }
-  .modal__close {
-    /* padding-bottom: 15px; */
+  /* .modal__close {
     padding-left: 7px;
-  }
+  } */
 }
 
 /* Header styling for larger screens */
