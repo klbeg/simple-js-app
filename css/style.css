@@ -45,8 +45,11 @@ body {
   color: var(--white);
 }
 header {
+  display: block;
+  justify-content: center;
   text-align: center;
   background-color: var(--black);
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 p {
@@ -58,15 +61,8 @@ p {
 .white__text {
   color: var(--white);
 }
-#modal {
-}
-.modal__dialog {
-}
+
 .modal__content {
-  display: flex;
-  align-self: center;
-  max-width: 100%;
-  margin-right: 0;
   border: var(--orangeBorder);
   background-color: var(--modalBackground);
 }
@@ -81,10 +77,6 @@ p {
 .pokemon__header__containter {
   background-color: var(--black);
 }
-.header__content__container {
-}
-.header__title__container {
-}
 
 /* search bar styling */
 .header__search__container {
@@ -92,9 +84,11 @@ p {
 #search__bar {
   display: flex;
   justify-content: center;
-  padding-bottom: 10px;
 }
 .search__label__container {
+  grid-column-start: 1;
+  height: 40px;
+  width: 90px;
   padding: 0 13px;
   background-color: var(--white);
 }
@@ -103,7 +97,10 @@ p {
   color: var(--black);
 }
 #search__input {
+  grid-column-start: 2;
   background-color: var(--black);
+  width: 190px;
+  height: 40px;
   border: 3px solid var(--white);
 }
 
@@ -141,13 +138,21 @@ p {
   grid-column-start: 3;
 }
 */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
   h3 {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
+@media screen and (min-width: 900px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* padding: 0 50px; */
+  }
+}
 /* Header styling for larger screens */
