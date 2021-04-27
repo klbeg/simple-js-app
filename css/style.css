@@ -119,6 +119,7 @@ p {
   background-color: var(--transBlack);
   border: var(--orangeBorder);
   text-shadow: var(--textShadow);
+  color: var(--white);
 }
 
 /* currently removed. may be re-implemented */
@@ -141,6 +142,9 @@ p {
   h3 {
     font-size: 15px;
   }
+  body {
+    background-size: 170%;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -148,7 +152,5 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* padding: 0 50px; */
   }
 }
-/* Header styling for larger screens */

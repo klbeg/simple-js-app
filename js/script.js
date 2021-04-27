@@ -99,9 +99,9 @@ function isValidPokemon(pokemon) {
 //  when clicked, button opens modal
 let pokemonButtonCreator = (pokemon) => {
   let pokemonListContainer = $('.pokemon__list__container');
-  let listItem = $('<li></li>');
+  let listItem = $('<li class="group-list-item"></li>');
   let button = $(
-    '<button class="" data-toggle="modal" data-target="#modal">' +
+    '<button class="btn" data-toggle="modal" data-target="#modal">' +
       capitalizeFirstLetter(pokemon.name) +
       '</button>'
   );
@@ -110,6 +110,7 @@ let pokemonButtonCreator = (pokemon) => {
   $(button).click(() => pokemonRepository.showDetails(pokemon));
 
   //  appends 'li' and 'button' to 'ul'
+
   pokemonListContainer.append(listItem);
   listItem.append(button);
 };
