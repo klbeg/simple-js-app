@@ -106,14 +106,10 @@ p {
 
 /* pokemon list styling */
 .pokemon__list__container {
-  display: grid;
-  grid-template-columns: auto 280px auto;
+  text-align: center;
   list-style: none;
-  width: 100%;
-  margin: 0, auto;
 }
 .pokemon__list__container li {
-  grid-column-start: 2;
   padding: 5px 0;
 }
 .pokemon__list__container li button {
