@@ -121,6 +121,7 @@ p {
   border: var(--orangeBorder);
   text-shadow: var(--textShadow);
   color: var(--white);
+  border-radius: 7px;
 }
 
 /* currently removed. may be re-implemented */
