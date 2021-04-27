@@ -144,3 +144,15 @@ let pokemonTypesFormatter = (item) => {
   );
 };
 //item.types[1].type.name
+
+// creating searchbar feature
+// const searchBar = document.getElementById('search__input');
+
+// searchBar.addEventListener('keyup', (e) => {
+//   const searchString = e.target.value.toLowerCase();
+//   console.log(searchString);
+//   const filteredCharacters = pokemonRepository.getAll().filter((pokemon) => {
+//     return pokemon.name.toLowerCase().includes(searchString);
+//   });
+//   console.log(filteredCharacters);
+// });
