@@ -1,3 +1,4 @@
+/* variables */
 * {
   --orange: #d68310;
   --shadowOrange: #d68310ad;
@@ -11,6 +12,8 @@
   --primaryFont: 'Orelega One', cursive;
   --secondaryFont: 'Oswald', sans-serif;
 }
+
+/* global */
 * {
   font-family: var(--secondaryFont);
   box-sizing: border-box;
@@ -25,11 +28,14 @@ h1 {
 }
 h2 {
   font-size: 30px;
+  /* make 40 px at med breakpoint */
 }
 h3 {
   font-size: 15px;
+  /* make 20px at med breakpoint */
 }
 body {
+  /* background-color: var(--white); */
   background-color: var(--black);
   background-image: url(../img/pickachu-background.jpg);
   background-size: 300%;
@@ -45,10 +51,16 @@ header {
   background-color: var(--black);
   padding-bottom: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid white;
 }
 p {
   font-size: 18px;
+}
+
+/* index.html stylings */
+/* modal styling */
+.modal__dialog {
+  padding-top: 20%;
 }
 .white__text {
   color: var(--white);
@@ -63,9 +75,13 @@ p {
 .modal__header__border {
   border-bottom: 1px solid var(--orange);
 }
+
+/* header styling */
 .pokemon__header__containter {
   background-color: var(--black);
 }
+
+/* search bar styling */
 #search__bar {
   display: flex;
   justify-content: center;
@@ -88,6 +104,8 @@ p {
   height: 40px;
   border: 3px solid var(--white);
 }
+
+/* pokemon list styling */
 .pokemon__list__container {
   text-align: center;
   list-style: none;
@@ -116,6 +134,7 @@ p {
     background-size: 170%;
   }
 }
+
 @media screen and (min-width: 900px) {
   header {
     display: flex;
@@ -123,3 +142,17 @@ p {
     justify-content: space-around;
   }
 }
+
+/* currently removed. may be re-implemented */
+/* email/password form styling */
+/* .input__wrapper,
+.submit__wrapper { *
+  grid-template-columns: 17% 45% auto;
+}
+.submit__wrapper button {
+  grid-column-start: 2;
+}
+.error__message {
+  grid-column-start: 3;
+}
+*/

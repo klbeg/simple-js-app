@@ -59,10 +59,12 @@ p {
 
 /* index.html stylings */
 /* modal styling */
+.modal__dialog {
+  padding-top: 20%;
+}
 .white__text {
   color: var(--white);
 }
-
 .modal__content {
   border: var(--orangeBorder);
   background-color: var(--modalBackground);
