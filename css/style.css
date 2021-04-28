@@ -80,8 +80,6 @@ p {
 }
 
 /* search bar styling */
-.header__search__container {
-}
 #search__bar {
   display: flex;
   justify-content: center;
@@ -122,20 +120,6 @@ p {
   text-shadow: var(--textShadow);
   color: var(--white);
 }
-
-/* currently removed. may be re-implemented */
-/* email/password form styling */
-/* .input__wrapper,
-.submit__wrapper { *
-  grid-template-columns: 17% 45% auto;
-}
-.submit__wrapper button {
-  grid-column-start: 2;
-}
-.error__message {
-  grid-column-start: 3;
-}
-*/
 @media screen and (min-width: 600px) {
   h2 {
     font-size: 30px;
@@ -154,4 +138,17 @@ p {
     align-items: center;
     justify-content: space-around;
   }
+}
+
+/* currently removed. may be re-implemented */
+/* email/password form styling */
+/* .input__wrapper,
+.submit__wrapper { *
+  grid-template-columns: 17% 45% auto;
+}
+.submit__wrapper button {
+  grid-column-start: 2;
+}
+.error__message {
+  grid-column-start: 3;
 }
