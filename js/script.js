@@ -114,10 +114,13 @@ let pokemonButtonCreator = (pokemon) => {
   listItem.append(button);
 };
 //  end code for IIFE componends
-
+//  for use in button creation and modal population
 function capitalizeFirstLetter(item) {
   return item.charAt(0).toUpperCase() + item.slice(1);
 }
+
+//  targets existing modal elements, clears them
+//  then repopulates them with selected pokemon details
 function populateModal(item) {
   let modalTitle = $('#modal__title');
   let modalTypes = $('#modal__types');
@@ -133,6 +136,9 @@ function populateModal(item) {
   $(modalTypes).text('Type(s): ' + pokemonTypesFormatter(item));
   $(modalImageContainer).append('<img src="' + item.imageUrl + '">');
 }
+
+//  takes types from array and turns into string with capitalized
+//  first letter with a preceding space for display formatting
 let pokemonTypesFormatter = (item) => {
   return item.types.map(
     (types) =>
@@ -142,12 +148,16 @@ let pokemonTypesFormatter = (item) => {
 
 // creating searchbar feature
 const searchBar = document.getElementById('search__input');
-
+//  search bar listens for a key to be released after being pressed
+//  converts anything in the searchbar to lowecase, then
+//  compares it to all pokemon names (lowercase)
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
   const filteredCharacters = pokemonRepository.getAll().filter((pokemon) => {
     return pokemon.name.toLowerCase().includes(searchString);
   });
+  // targets pokemonList 'ul', clears it and
+  // populates it with search results.
   pokemonList = $('.pokemon__list__container');
   pokemonList.empty();
   filteredCharacters.forEach((pokemon) => {
