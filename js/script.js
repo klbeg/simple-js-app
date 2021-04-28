@@ -132,7 +132,6 @@ function populateModal(item) {
   $(modalHeight).text('Height: ' + item.height);
   $(modalTypes).text('Type(s): ' + pokemonTypesFormatter(item));
   $(modalImageContainer).append('<img src="' + item.imageUrl + '">');
-  console.log(item.imageUrl);
 }
 let pokemonTypesFormatter = (item) => {
   return item.types.map(
@@ -146,7 +145,6 @@ const searchBar = document.getElementById('search__input');
 
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
-  console.log(searchString);
   const filteredCharacters = pokemonRepository.getAll().filter((pokemon) => {
     return pokemon.name.toLowerCase().includes(searchString);
   });
