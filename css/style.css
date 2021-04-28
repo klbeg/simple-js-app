@@ -119,7 +119,7 @@ p {
   border: var(--orangeBorder);
   text-shadow: var(--textShadow);
   color: var(--white);
-  border-radius: 7px;
+  border-radius: 3px;
 }
 @media screen and (min-width: 600px) {
   h2 {
