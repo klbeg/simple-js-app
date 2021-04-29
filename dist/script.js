@@ -1,54 +1,60 @@
-let pokemonRepository = (function () {
-  let t = [],
-    e = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  function o(e) {
-    t.push(e);
-  }
-  function n(t) {
-    let e = t.detailsUrl;
-    return fetch(e)
-      .then(function (t) {
-        return t.json();
-      })
-      .then(function (e) {
-        (t.imageUrl = e.sprites.front_default),
-          (t.height = e.height),
-          (t.types = e.types);
-      })
-      .catch(function (t) {
-        console.error(t);
-      });
-  }
-  return {
-    add: o,
-    getAll: function () {
-      return t;
-    },
-    addListItem: function (t) {
-      pokemonButtonCreator(t);
-    },
-    loadList: function () {
-      return fetch(e)
-        .then(function (t) {
-          return t.json();
-        })
-        .then(function (t) {
-          t.results.forEach(function (t) {
-            o({ name: t.name, detailsUrl: t.url });
-          });
-        })
-        .catch(function (t) {
-          console.error(t);
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150',
+  pokemonRepository = (function () {
+    let t = [];
+    function e(t) {
+      return loadDetailsFunctionality(t);
+    }
+    return {
+      add: function (e) {
+        t.push(e);
+      },
+      getAll: function () {
+        return t;
+      },
+      addListItem: function (t) {
+        pokemonButtonCreator(t);
+      },
+      loadList: function () {
+        return loadListFunctionality();
+      },
+      loadDetails: e,
+      showDetails: function (t) {
+        e(t).then(function () {
+          populateModal(t);
         });
-    },
-    loadDetails: n,
-    showDetails: function (t) {
-      n(t).then(function () {
-        populateModal(t);
+      },
+    };
+  })();
+function loadListFunctionality() {
+  return fetch(apiUrl)
+    .then(function (t) {
+      return t.json();
+    })
+    .then(function (t) {
+      t.results.forEach(function (t) {
+        let e = { name: t.name, detailsUrl: t.url };
+        pokemonRepository.add(e);
       });
-    },
-  };
-})();
+    })
+    .catch(function (t) {
+      console.error(t);
+    });
+}
+function loadDetailsFunctionality(t) {
+  let e = t.detailsUrl;
+  return fetch(e)
+    .then(function (t) {
+      return t.json();
+    })
+    .then(function (e) {
+      (t.imageUrl = e.sprites.front_default),
+        (t.height = e.height),
+        (t.types = e.types);
+    })
+    .catch(function (t) {
+      console.error(t);
+    });
+}
 function isValidPokemon(t) {
   return ['name', 'height', 'types'].every(function (e) {
     return t.hasOwnProperty(e);
@@ -76,15 +82,15 @@ function populateModal(t) {
   let e = $('#modal__title'),
     o = $('#modal__types'),
     n = $('#modal__height'),
-    a = $('#modal__image__container');
+    i = $('#modal__image__container');
   e.empty(),
     o.empty(),
     n.empty(),
-    a.empty(),
+    i.empty(),
     $(e).text(capitalizeFirstLetter(t.name)),
     $(n).text('Height: ' + t.height),
     $(o).text('Type(s): ' + pokemonTypesFormatter(t)),
-    $(a).append('<img src="' + t.imageUrl + '">');
+    $(i).append('<img src="' + t.imageUrl + '">');
 }
 let pokemonTypesFormatter = (t) =>
   t.types.map(

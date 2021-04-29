@@ -25,20 +25,7 @@ let pokemonRepository = (function () {
   //  uses detailsUrl to acces sprite, height and type of
   //  each pokemon.
   function loadDetails(item) {
-    let url = item.detailsUrl;
-    return fetch(url)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (details) {
-        // Now we add the details to the item
-        item.imageUrl = details.sprites.front_default;
-        item.height = details.height;
-        item.types = details.types;
-      })
-      .catch(function (e) {
-        console.error(e);
-      });
+    return loadDetailsFunctionality(item);
   }
   //  console logs pokemon details (sprite, height, types)
   function showDetails(item) {
@@ -74,6 +61,23 @@ function loadListFunctionality() {
         };
         pokemonRepository.add(pokemon);
       });
+    })
+    .catch(function (e) {
+      console.error(e);
+    });
+}
+
+function loadDetailsFunctionality(item) {
+  let url = item.detailsUrl;
+  return fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
     })
     .catch(function (e) {
       console.error(e);
