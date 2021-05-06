@@ -48,6 +48,8 @@ let pokemonRepository = (function () {
 
 //  begin code for IIFE components
 
+//  loads poke.api > turns to json, then creates object
+//  with name & detailsUrl.  pushes to pokemonList
 function loadListFunctionality() {
   return fetch(apiUrl)
     .then(function (response) {
@@ -67,6 +69,8 @@ function loadListFunctionality() {
     });
 }
 
+//  uses detailsUrl to acces sprite, height and type of
+//  each pokemon.
 function loadDetailsFunctionality(item) {
   let url = item.detailsUrl;
   return fetch(url)

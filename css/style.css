@@ -144,17 +144,3 @@ p {
     justify-content: space-around;
   }
 }
-
-/* currently removed. may be re-implemented */
-/* email/password form styling */
-/* .input__wrapper,
-.submit__wrapper { *
-  grid-template-columns: 17% 45% auto;
-}
-.submit__wrapper button {
-  grid-column-start: 2;
-}
-.error__message {
-  grid-column-start: 3;
-}
-*/
