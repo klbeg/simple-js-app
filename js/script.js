@@ -1,6 +1,6 @@
 //  IIFE
 //  pokemonRepository used to create list of pokemon
-let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+const API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 let pokemonRepository = (function () {
   let pokemonList = [];
 
@@ -51,7 +51,7 @@ let pokemonRepository = (function () {
 //  loads poke.api > turns to json, then creates object
 //  with name & detailsUrl.  pushes to pokemonList
 function loadListFunctionality() {
-  return fetch(apiUrl)
+  return fetch(API_URL)
     .then(function (response) {
       return response.json();
     })
